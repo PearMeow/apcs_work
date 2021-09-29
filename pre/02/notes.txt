@@ -1,2 +1,2 @@
-#date
-The efficiency of System.out.print was subpar.
+#hello
+Semicolons at the end of every line was new to me and sometimes my errors are due to a lack of semicolons.
