@@ -1,2 +1,2 @@
-#ex1
-I found the flow of execution interesting.
+#conditionals
+I found the else ifs were new but they were essentially the same as elifs.
