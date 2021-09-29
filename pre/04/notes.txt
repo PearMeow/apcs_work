@@ -1,2 +1,2 @@
-#methods
-The use of != was new to me.
+#ex1
+I found the flow of execution interesting.
