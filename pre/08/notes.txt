@@ -1,0 +1,2 @@
+#arrays
+I didn't understand Arrays and gave up after spending an hour on it. However, my teammates said that arrays are bad in Java.
