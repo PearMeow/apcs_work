@@ -1,2 +1,2 @@
-#loops
-The syntax for the while and for was new to me. I also think that for is always better than while.
+#methods
+The use of != was new to me.
