@@ -1,2 +1,2 @@
-#hello 
-Semicolons at the end of every line was new to me and sometimes my errors are due to a lack of semicolons.
+#Setup
+I use Atom and PowerShell to do work
