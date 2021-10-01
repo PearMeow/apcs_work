@@ -6,13 +6,18 @@
 public class Greet{
 
     public static void main(String[] args) {
-        greet("Good day to you, Salaj.");
-        greet("Hello to you too, Perry");
-        greet("What's up, Lawrence?");
+        greet("Salaj");
+        greet("Perry");
+        greet("Lawrence");
   }
 
     static void greet(String str){
-        System.out.println(str);
+        System.out.print("What's up ");
+        System.out.print(str);
+	System.out.println("?");
   }
 
 } 
+
+// Questions: Why is static needed for methods? 
+// What does public do?
