@@ -1,4 +1,4 @@
-//<Perry> <Huang>
+//<Flaming Hot Cheetos - Perry Huang and Salaj Jr, Courtney Huang and Timothy, Samantha Hua and Poppy>
 //APCS
 //HW<09> -- <What Are BigSibs Good For?/Greeting People/Using another file's methods to greet people in a file>
 //<2021>-<10>-<01>
