@@ -6,6 +6,7 @@
 //DISCOVERIES:
 //<git add doesn't create a file, it adds the file to github for viewing.
 //You can make a file without a main method and you can use the contents of that file in other files.>
+
 //UNRESOLVED QUESTIONS:
 //<Why do you need public in front of the class and the main method?
 //Are main methods actually called methods or are they called functions?
