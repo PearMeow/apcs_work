@@ -14,6 +14,7 @@ Are main methods actually called methods or are they called functions?
 What does static do?
 What is good style in java coding?>
 */
+
 public class BigSib{
 
     public static void greet(String str) {
