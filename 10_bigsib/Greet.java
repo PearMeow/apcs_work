@@ -4,6 +4,8 @@ APCS
 HW<09> -- <Refactor Big Sib One/Greeting People, but printing it/Using another file to generate strings of text for this one to print>
 <2021>-<10>-<04>
 DISCOVERIES:
+<You can add strings in java.
+You have to change the void part of a method to make it be able to return a type of value.>
 
 UNRESOLVED QUESTIONS:
 
