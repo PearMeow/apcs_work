@@ -1,12 +1,1 @@
 For storing errors
-
-HW10
-BigSib.java:4: error: incompatible types: unexpected return value
-       return ("What's up " + str + "?");
-              ^
-BigSib.java:4: error: incompatible types: String cannot be converted to void
-       return ("What's up " + str + "?");
-                                  ^
-2 errors
-
-HW??(tbd)
