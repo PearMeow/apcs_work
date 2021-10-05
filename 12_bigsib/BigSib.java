@@ -9,8 +9,12 @@ QCC
 
 public class BigSib{
 
-   public static String greet(String str) {
-       return ("What's up " + str + "?");
+   public static String setHelloMsg(String str) {
+       System.out.print(str + " ");
+       return str;
   }
 
+   public static String greet(String str) {
+       return str;
+  }
 }
