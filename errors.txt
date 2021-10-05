@@ -9,4 +9,15 @@ BigSib.java:4: error: incompatible types: String cannot be converted to void
                                   ^
 2 errors
 
-HW??(tbd)
+HW12
+Greet.java:16: error: cannot find symbol
+    BigSib richard = new BigSib();
+    ^
+  symbol:   class BigSib
+  location: class Greet
+Greet.java:16: error: cannot find symbol
+    BigSib richard = new BigSib();
+                         ^
+  symbol:   class BigSib
+  location: class Greet
+2 errors
