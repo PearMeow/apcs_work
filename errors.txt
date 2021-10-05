@@ -21,3 +21,11 @@ Greet.java:16: error: cannot find symbol
   symbol:   class BigSib
   location: class Greet
 2 errors
+
+Greet.java:16: error: cannot access BigSib
+    BigSib richard = new BigSib();
+    ^
+  bad source file: ./BigSib.java
+    file does not contain class BigSib
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+1 error
