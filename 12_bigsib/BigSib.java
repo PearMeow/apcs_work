@@ -1,7 +1,7 @@
 /*
-Perry Huang and Salaj Jr, Faiyaz Rafee and ...
+Perry Huang and Salaj Jr, Faiyaz Rafee and Pivot and Atlas
 APCS
-HW12 -- <On Elder Individuality and the Elimination of Radio Fuzz//Summary>
+HW12 -- <On Elder Individuality and the Elimination of Radio Fuzz/Greeting People/Summary>
 2021-10-5
 DISCOS
 QCC
