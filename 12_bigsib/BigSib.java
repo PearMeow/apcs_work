@@ -1,7 +1,7 @@
 /*
 Perry Huang
 APCS
-HW12 -- On Elder Individuality and the Elimination of Radio Fuzz/Greeting People/Making greetings but assigning BigSib to richard somehow
+HW12 -- On Elder Individuality and the Elimination of Radio Fuzz/Greeting People/Making greetings but assigning BigSib to richard
 2021-10-5
 DISCOS
 BigSib richard = new BigSib() assigns BigSib() to richard which is why richard.methods* works.
