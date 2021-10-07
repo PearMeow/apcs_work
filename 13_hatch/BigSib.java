@@ -10,15 +10,15 @@ QCC
 */
 public class BigSib{
 
-   private BigSin{
+   public BigSin{
   }
 
-   public static String setHelloMsg(String str) {
+   private static String setHelloMsg(String str) {
        System.out.print(str + " ");
        return str;
   }
 
-   public static String greet(String str) {
+   private static String greet(String str) {
        return str;
   }
 }
