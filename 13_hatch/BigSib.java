@@ -11,7 +11,7 @@ QCC
 public class BigSib{
 
    public BigSib() {
-      richard.setHelloMsg();
+      BigSib.setHelloMsg();
   }
 
    public static String setHelloMsg(String str) {
