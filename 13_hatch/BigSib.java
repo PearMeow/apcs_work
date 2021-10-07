@@ -14,9 +14,8 @@ public class BigSib{
       BigSib.setHelloMsg("Hello");
   }
 
-   public static String setHelloMsg(String str) {
+   public static void setHelloMsg(String str) {
        System.out.print(str + " ");
-       return str;
   }
 
    public static String greet(String str) {
