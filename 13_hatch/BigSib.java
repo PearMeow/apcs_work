@@ -14,12 +14,12 @@ public class BigSib{
       richard.setHelloMsg("Word up");
   }
 
-   private static String setHelloMsg(String str) {
+   public static String setHelloMsg(String str) {
        System.out.print(str + " ");
        return str;
   }
 
-   private static String greet(String str) {
+   public static String greet(String str) {
        return str;
   }
 }
