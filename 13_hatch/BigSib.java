@@ -10,7 +10,7 @@ QCC
 */
 public class BigSib{
 
-   public richard() {
+   public BigSib() {
       richard.setHelloMsg(str);
   }
 
