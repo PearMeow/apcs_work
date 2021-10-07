@@ -1,5 +1,5 @@
 /*
-Perry Huang
+The Hotdogs: Perry Huang and Salaj Jr, Faiyaz Rafee and Pivot and Atlas
 APCS
 HW13 -- Where do BigSibs Come From?/Greeting People/Making greetings but using a constructor
 2021-10-6
