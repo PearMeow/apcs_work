@@ -10,8 +10,8 @@ QCC
 */
 public class BigSib{
 
-   public richard{
-      richard.setHelloMsg("Word up");
+   public richard(String str) {
+      richard.setHelloMsg(str);
   }
 
    public static String setHelloMsg(String str) {
