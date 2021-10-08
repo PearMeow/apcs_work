@@ -10,19 +10,18 @@ What does removing static actually do to BigSib.java?
 
 public class BigSib{
 
-   public BigSib() {
-      BigSib.setHelloMsg("Word up");
-  }
+      String helloMsg;
 
-   public String BigSib(String str) {
-      BigSib.setHelloMsg(str);
-  }
+      public BigSib() {
+         helloMsg = "Word up";
+     }
 
-   public static void setHelloMsg(String str) {
-       System.out.print(str + " ");
-  }
+      public void setHelloMsg(String str) {
+          helloMsg = str;
+     }
 
-   public static String greet(String str) {
-       return str;
-  }
-}
+      public String greet(String str) {
+          return helloMsg + " " + str;
+     }
+   }
+
