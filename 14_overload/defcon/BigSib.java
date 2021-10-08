@@ -1,7 +1,11 @@
-/* Perry Huang
+/* Perry Huang, Andrew Piatetsky, Samantha Hua
 APCS
 HW14 -- Customize Your Creation/Overloading Constructors/Summary
 2021-10-07
+DISCOS
+
+QCC
+
 */
 
 public class BigSib{
