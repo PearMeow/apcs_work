@@ -27,7 +27,7 @@ public BankAccount(String a, String b, int c, int d, double u){
         balance = u;
 }
 
-public static void accDetails( perryJR ){
+/*public static void accDetails( perryJR ){
 	System.out.println(perryJR.accHoldername);
 	System.out.println(perryJR.password);
 	System.out.println(perryJR.pin);
@@ -35,9 +35,19 @@ public static void accDetails( perryJR ){
 	System.out.println(perryJR.balance);
 
 }
+
+public static void deposit(double money) {
+	perryJR.balance = perryJR.balance + money;
+}
+
+public static void withdraw(double money) {
+        perryJR.balance = perryJR.balance - money;
+}
+*/
+
 public static void main(String[] args){
 	BankAccount PerryThePlatypus = new BankAccount("PerryThePlatypus", "ILikePlatypuses", 1234, 000000002, 169);
-	accDetails();
+//	accDetails();
 }
 
 
