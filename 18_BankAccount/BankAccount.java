@@ -5,19 +5,11 @@ HW18 -- <CPA-One/Bank Account Java/Summary>
 */
 
 public class BankAccount{
-	private String accHolderName;
-	private String password;
-	private int pin;
-	private int accNumber;
-	private double balance;
-
-public BankAccount() {
-	accHolderName = "TheCats";
-	password = "ILikeCats";
-	pin = 6969;
-	accNumber = 000000001;
-	balance = 420.69 ;
-}
+	private static String accHolderName;
+	private static String password;
+	private static int pin;
+	private static int accNumber;
+	private static double balance;
 
 public BankAccount(String a, String b, int c, int d, double u){
 	accHolderName = a;
@@ -27,28 +19,26 @@ public BankAccount(String a, String b, int c, int d, double u){
         balance = u;
 }
 
-/*public static void accDetails( perryJR ){
-	System.out.println(perryJR.accHoldername);
-	System.out.println(perryJR.password);
-	System.out.println(perryJR.pin);
-	System.out.println(perryJR.accNumber);
-	System.out.println(perryJR.balance);
-
+public static void accDetails(){
+	System.out.println(accHolderName);
+	System.out.println(password);
+	System.out.println(pin);
+	System.out.println(accNumber);
+	System.out.println(balance);
 }
 
 public static void deposit(double money) {
-	perryJR.balance = perryJR.balance + money;
+	balance += money;
 }
 
 public static void withdraw(double money) {
-        perryJR.balance = perryJR.balance - money;
+  balance -= money;
 }
-*/
 
 public static void main(String[] args){
 	BankAccount PerryThePlatypus = new BankAccount("PerryThePlatypus", "ILikePlatypuses", 1234, 000000002, 169);
-//	accDetails();
+  PerryThePlatypus.accDetails();
+  PerryThePlatypus.deposit(800);
+  PerryThePlatypus.accDetails();
 }
-
-
 }
