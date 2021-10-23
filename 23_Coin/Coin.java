@@ -3,7 +3,7 @@ The Sentinels: Perry Huang, Salaj Rijal
 APCS
 HW23 -- What Does Equality Look Like?/Making Coin.java and Driver.java/Flipping coins with bias.
 2021-10-23
-time spent: .9 hours
+time spent: 0.9 hours
  */
 
 import java.util.Random;
