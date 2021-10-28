@@ -64,7 +64,7 @@ public class Stats {
       System.out.println(gcdER(16, 28));
       System.out.println(gcdEW(15, 18));
       System.out.println(gcdEW(16, 28));
-      System.out.println(gcd(15, 18));
-      System.out.println(gcd(16, 28));
+//    System.out.println(gcd(15, 18));
+//    System.out.println(gcd(16, 28));
       }
   }
