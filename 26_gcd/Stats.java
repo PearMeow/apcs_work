@@ -16,7 +16,7 @@ If a does not equal b, find the greatest input. Change the value of the greater 
 by subtracting the smaller input from it. Repeat process until a equals b. Then return a or b (doesn't matter)
 */
 public class Stats {
-  
+/*
     public static int gcd( int a, int b) {
       int i;
       while (a != b) {
@@ -31,7 +31,7 @@ public class Stats {
       }
       return i;
     }
-    
+*/
   //spent too much time; can't spend more because of other homework
     
     public static int gcdER( int a, int b) {
