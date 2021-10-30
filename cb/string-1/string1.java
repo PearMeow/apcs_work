@@ -1,4 +1,10 @@
-
+/*
+Perry Huang
+APCS
+HW28 -- PPMP/CodingBat Problem Solving/Coding to solve some CodingBat problems 
+2021-10-30
+time spent: 2.0 hours
+*/
 
 public class string1 {
 
