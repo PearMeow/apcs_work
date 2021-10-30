@@ -1,32 +1,32 @@
+
+
 public class string1 {
+
+    /*
+     * Given a string name, e.g. "Bob", return a greeting of the form "Hello
+     * Bob!".
+     */
 
     public static String helloName(String name) {
         return "Hello " + name + "!";
       }
 
+    /*
+     * Given two strings, a and b, return the result of putting them together in
+     * the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
+     */
+    
     public static String makeAbba(String a, String b) {
         return a + b + b + a;
       }
 
     public static void main(String[] args) {
-        System.out.println(helloName("Bob"));
-        System.out.println(helloName("Alice"));
-        System.out.println(helloName("X"));
-        System.out.println(helloName("Dolly"));
-        System.out.println(helloName("Alpha"));
-        System.out.println(helloName("Omega"));
-        System.out.println(helloName("ho ho ho"));
-        System.out.println(helloName("xyz"));
-        System.out.println(helloName("hello"));
+        System.out.println(helloName("Bob")); // "Hello Bob!"
+        System.out.println(helloName("Alice")); // "Hello Alice!"
+        System.out.println(helloName("X")); // "Hello X!"
         System.out.println("------------------------");
-        System.out.println(makeAbba("Hi", "Bye"));
-        System.out.println(makeAbba("Yo", "Alice"));
-        System.out.println(makeAbba("What", "Up"));
-        System.out.println(makeAbba("aaa", "bbb"));
-        System.out.println(makeAbba("x", "y"));
-        System.out.println(makeAbba("x", ""));
-        System.out.println(makeAbba("", "y"));
-        System.out.println(makeAbba("Bo", "Ya"));
-        System.out.println(makeAbba("Ya", "Ya"));
+        System.out.println(makeAbba("Hi", "Bye")); // "HiByeByeHi"
+        System.out.println(makeAbba("Yo", "Alice")); // "YoAliceAliceYo"
+        System.out.println(makeAbba("What", "Up")); // "WhatUpUpWhat"
     }
 }
