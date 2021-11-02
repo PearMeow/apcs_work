@@ -18,14 +18,29 @@ public class Commafier{
          
         return result;
     }
-    public static void main(String[] args) {
 
+    public static String commafyR(int n) {
+        String number = Integer.toString(n);
+        String result = "";
+        if (number.length() < 4) {
+          return number;
+        }
+        else {
+          result = number.substring(number.length() - 3);
+          number = number.substring(0, number.length() - 3);
+          result = commafyR(Integer.parseInt(number)) + "," + result;
+        }
+        return result;
+    }
+        
+    public static void main(String[] args) {      
+        System.out.println(commafyR(String[0]));
+    /*  System.out.println(commafyR(1001));
+        System.out.println(commafyR(1000000));
+        System.out.println(commafyF(1000));
+        System.out.println(commafyF(1000000));
         System.out.println(commafyF(1000980990));
-        //commafyR(1000);
-        //commafyR(1000000);
-        //commafyF(1000);
-        //commafyF(1000000);
-
+    */
     }
 
 }
