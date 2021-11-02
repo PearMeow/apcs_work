@@ -33,7 +33,7 @@ public class Commafier{
         return result;
     }
         
-    public static void main(String[] args) {      
+    public static void main(String[] args) {
         System.out.println(commafyR(String[0]));
     /*  System.out.println(commafyR(1001));
         System.out.println(commafyR(1000000));
