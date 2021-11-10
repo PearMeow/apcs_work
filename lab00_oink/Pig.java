@@ -18,6 +18,8 @@
  * a Pig Latin translator
  ***/
 
+import java.util.Scanner;
+
 public class Pig
 {
   private static final String VOWELS = "aeiouy";
@@ -155,16 +157,12 @@ public class Pig
     }
     return -1;
   }
-
-  /** ==================================
-   * 
-   * Methods for identifying and modifying strings based on spaces
-   * 
-     ==================================**/
-
-  //returns true is the string inputed (letter) is a space
+  
+  //Methods for identifying and modifying strings based on spaces
   public static boolean isASpace ( String space ) {
-
+		 /*
+     *returns true is the string inputed (letter) is a space
+     */
      if (space.equals(" ")) {
       return true;
      }
@@ -183,12 +181,8 @@ public class Pig
 
   }
 
-  /** ==================================
-   * 
-   * Translator methods for actually going from English to Pig Latin
-   * 
-   * ==================================**/
 
+  //Translator methods for actually going from English to Pig Latin
   public static String wordToPig( String w ) {
 
     String pig = "";
@@ -239,11 +233,20 @@ public class Pig
     pig += wordToPig(w);//Adds the ending because no more spaces (last word added at the end)
 
     return pig;
-  } //ehnd engToPig
+  } //end engToPig
 
 
   public static void main( String[] args ) {
 
+    
+    //instantiate a Scanner with STDIN as its bytestream
+    Scanner sc = new Scanner( System.in );
+
+    while( sc.hasNext() ) {
+      System.out.println( sc.next() );
+      System.out.println( sc.next() );
+    }
+    
     String sentence = "";
 
     for (String s : args ) {
