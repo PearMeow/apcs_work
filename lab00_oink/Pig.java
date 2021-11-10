@@ -97,7 +97,6 @@ public class Pig
     return false;
   }
 
-
   public static int indexOfCap ( String w ) {
 		/*
     *returns index of capital letter, if none then returns -1
@@ -134,7 +133,6 @@ public class Pig
     }
     return null;
   }
-
 
   public static boolean isALetter ( String chara ) {
 		/*
@@ -181,14 +179,11 @@ public class Pig
 
   }
 
-
   //Translator methods for actually going from English to Pig Latin
   public static String wordToPig( String w ) {
-
     String pig = "";
     String punct = "";
   
-
     if ( indexOfPunc(w) != -1 ) {
       punct = w.substring(w.length()-1);
       w = w.substring(0,w.length()-1);
@@ -202,8 +197,6 @@ public class Pig
     if (vPos != -1) { pig = w.substring(vPos) + w.substring(0,vPos) + "ay"; }
     else {pig = w + "ay"; }
 
-
-
     if (firstCap(w)) {
       String capLetter = findUpper(indexOflower((pig.substring(0,1)))); //Turns first letter of pig string into an uppercase letter and stores in variable
       pig = capLetter + (pig.substring(1)).toLowerCase(); //Adds capital first letter to 
@@ -211,8 +204,6 @@ public class Pig
 
     return pig + punct;
   } //end wordToPig
-
-
 
   // Can be used to translate sentences, wordToPig does actual singular words
   public static String engToPig( String w ) {
@@ -235,31 +226,14 @@ public class Pig
     return pig;
   } //end engToPig
 
-
   public static void main( String[] args ) {
-
-    
     //instantiate a Scanner with STDIN as its bytestream
     Scanner sc = new Scanner( System.in );
 
     while( sc.hasNext() ) {
-      System.out.println( sc.next() );
-      System.out.println( sc.next() );
+      System.out.print( engToPig( sc.next() ) + " " );
     }
-    
-    String sentence = "";
-
-    for (String s : args ) {
-      //System.out.println(engToPig(s));
-      sentence += " " + s;
-    }
-
-    sentence = sentence.substring(1);
-    System.out.println(sentence);
-    System.out.println(engToPig(sentence));
-
-
-
+    System.out.println();
   }//end main()
-
+  
 }//end class Pig
