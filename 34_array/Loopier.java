@@ -1,3 +1,16 @@
+/*
+Team BPK: Perry Huang, Ben Belotser, Kosta Dubovskiy
+APCS
+HW34 -- A Pirate’s Life for Me / Finding things in arrays / Using recursive and iterative methods to find integers in arrays. 
+2021-11-14
+time spent: 0.5 hours
+DISCO
+
+
+QCC
+
+*/
+
 public class Loopier {
   public static int[] filler(int[] array) {
       for(int i = 0; i < array.length; i++) {
@@ -7,7 +20,7 @@ public class Loopier {
   }
 
   public static String[] stringify(int[] array) {
-      String result = "";
+      String[] result = "";
       for(int i : array) {
           result += i + ",";
       }
@@ -24,21 +37,24 @@ public class Loopier {
   } 
 
   public static int linSearchR(int[] array, int target) {
-      /*if (array.length == 1) {
-          if (array[0] != target) {
-              return -1;
-          } else {
-              return 1;
-          }
-      } else {
-          if (array[0] == target) {
-              return 1;
-          } else {
-              return 1 + linSearchR(array[1::array.length]);
-          }
-      }  ^^ doesn't work*/
+    if (array.length == 0) {
       return -1;
-  } 
+    }
+    if (array.length == 1) {
+      if (array[0] == target) {
+      return 0;}
+      else {
+      return -1;}
+    if (array[array.length - 1] == target) {
+    return array.length - 1;
+    }
+    }
+    else {
+    linSearchR(array[array[array.length - 1]].length - 1, target);
+    }
+    
+    return -1;
+} 
 
   public static int freq(int[] array, int target) {
       int total = 0;
@@ -50,11 +66,18 @@ public class Loopier {
       return total;
   }
 
-  public static int freqRec(int[] array, int target) {
-      String stringedArray = stringify(array);
+  /*public static int freqRec(int[] array, int target) {
+    int total = 0;
+    if (array.length == 0) {
+      return 0;
+    for 
+    
+    
+//        String stringedArray = stringify(array);
       
       return 0;
   }
+  */
   public static void main(String[] args) {
       int[] array = new int[10];
       int[] filledArray = filler(array);
@@ -67,4 +90,6 @@ public class Loopier {
           System.out.print(i + ", ");
       }
   }
+
+
 }
