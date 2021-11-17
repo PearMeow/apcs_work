@@ -1,3 +1,11 @@
+/*
+Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
+APCS
+HW37 -- PPMP[]/CodingBat Problem Solving/Coding to solve some array problems 
+2021-11-16
+time spent: 0.5 hours
+*/
+
 public class array2 {
 
 /*Return the number of even ints in the given array. Note: the % "mod" operator computes the remainder,
