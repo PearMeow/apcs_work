@@ -1,3 +1,11 @@
+/*
+Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
+APCS
+HW37 -- PPMP[]/CodingBat Problem Solving/Coding to solve some array problems 
+2021-11-16
+time spent: 0.5 hours
+*/
+
 public class array1{
 
 /*Given an array of ints, return true if 6 appears as either the first or last element in the array.
