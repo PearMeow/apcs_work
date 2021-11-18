@@ -1,1 +1,16 @@
-hello
+Perry Huang
+APCS
+HW36 -- All Quacked Up/ThinkJava Appendix D/Taking notes on Appendix D
+2021-11-18
+time spent: 0.5
+
+Compile time errors - syntax errors
+Run-time errors - something goes wrong while running (eg StackOverflowError)
+Logic errors - wrong thing done but right code
+Bisection debugging - delete code and run, make backup before
+Sometimes compiler is wrong
+Print statements can help with debugging
+Write readable expressions
+Use temp variables that you can display before return
+println is immediate, print sometimes isn't
+Sometimes you need other people to look at your code
