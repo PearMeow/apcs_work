@@ -1,11 +1,5 @@
-/******************************
- * class TwoDimArray
- * (skeleton)
- * practice working with 2D arrays
- ******************************/
-
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
+// APCS pd7
 // HW40 -- 2D arrays
 // 2021-11-30
 
