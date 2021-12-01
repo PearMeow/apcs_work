@@ -1,7 +1,8 @@
 /*
 Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
 APCS pd07
-HW41
+HW41 -- Be Rational/Rationals/Making rationals and multiplying and dividing them
+2021-12-01
 time spent: 1.0 hour
 
 DISCO
