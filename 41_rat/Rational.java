@@ -1,7 +1,8 @@
 /*
 Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
 APCS pd07
-hw41
+HW41
+time spent: 1.0 hour
 */
 
 import javax.swing.JSpinner.NumberEditor;
