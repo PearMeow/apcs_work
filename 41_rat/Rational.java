@@ -6,9 +6,9 @@ HW41 -- Be Rational/Rationals/Making rationals and multiplying and dividing them
 time spent: 1.0 hour
 
 DISCO
-
+Using an object to change another object doesn't change the first object's value.
 QCC
-
+What tests can break this program?
 */
 
 import javax.swing.JSpinner.NumberEditor;
