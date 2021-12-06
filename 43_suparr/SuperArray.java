@@ -1,6 +1,6 @@
 // Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
 // APCS pd07
-// HW43 -- encapsulation (basic SuperArray functionality)
+// HW43 -- Array of Steel (basic SuperArray functionality)
 // 2021-12-06
 
 /***************************
