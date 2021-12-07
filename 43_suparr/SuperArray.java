@@ -7,6 +7,11 @@
  * class SuperArray
  * Wrapper class for array. Facilitates resizing,
  * getting and setting element values.
+ * 
+ * DISCO
+ * I learned that foreach loop doesn't work as intended when in a constructor.
+ * QCC
+ * Why doesn't the foreach loop work?
  ***************************/
 
 public class SuperArray
@@ -21,7 +26,7 @@ public class SuperArray
   {
     _size = 10;
     _data = new int[_size];
-    for (int i : _data) {
+    for (int i = 0; i < _data.length; i++) {
         _data[i] = 0;
     }  
   }
@@ -30,10 +35,11 @@ public class SuperArray
   //output SuperArray in [a,b,c] format
   public String toString()
   {
-    String result = "";
-    for (int i : _data) {
-        result += _data[i];
+    String result = "[";
+    for (int i = 0; i < _data.length - 1; i++) {
+        result += _data[i] + ", ";
     }
+    result += _data[_data.length - 1] + "]";
     return result;
   }
 
@@ -70,14 +76,14 @@ public class SuperArray
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
       for( int i = 0; i < curtis._data.length; i++ ) {
-      curtis.set( i, i * 2 );
+        curtis.set( i, i * 2 );
       }
       System.out.println("Printing populated SuperArray curtis...");
       System.out.println(curtis);
       for( int i = 0; i < 3; i++ ) {
-      curtis.expand();
-      System.out.println("Printing expanded SuperArray curtis...");
-      System.out.println(curtis);
+        curtis.expand();
+        System.out.println("Printing expanded SuperArray curtis...");
+        System.out.println(curtis);
       }
 
   }//end main()
