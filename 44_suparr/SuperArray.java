@@ -1,11 +1,11 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08w
+// Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
+// APCS pd07
+// HW44 -- Array of Grade 316/Super Arrays/Adding more functionality to the arrays
+// 2021-12-08
+// time spent: 0.5 hours
 
 /***************************
  * class SuperArray version 2.0
- * (SKELETON)
  * Wrapper class for array. Facilitates
  * resizing
  * expansion
@@ -13,6 +13,11 @@
  * adding an element to end of array
  * adding an element at specified index
  * removing an element at specified index
+ * 
+ * DISCO
+ * We discovered that we couldn't make the code functional within 30 mins.
+ * QCC
+ * How can we make our code function for the main method?
  ***************************/
 
 public class SuperArray
@@ -26,6 +31,9 @@ public class SuperArray
   public SuperArray()
   {
     _data = new int[10];
+    for (int i : _data) {
+      i = 0;
+    }
     _size = 0;
   }
 
@@ -49,8 +57,9 @@ public class SuperArray
   private void expand()
   {
     int[] temp = new int[ _data.length * 2 ];
-    for( int i = 0; i < _data.length; i++ )
+    for( int i = 0; i < _data.length; i++ ) {
       temp[i] = _data[i];
+    }
     _data = temp;
   }
 
@@ -59,18 +68,6 @@ public class SuperArray
   public int get( int index )
   {
     return _data[index];
-  }
-return number of meaningful items in _data
-  public int size()
-  {
-    int result = 0;
-    for (int i : _data) {
-      if (i == 0) {
-        return result;
-    }
-    result += 1;
-  }
-    return result;
   }
 
   //mutator -- set value at index to newVal,
@@ -86,14 +83,20 @@ return number of meaningful items in _data
   //adds an item after the last item
   public void add( int newVal )
   {
-     _data[_data.size()] = newVal;
+    if (_data[_size] != 0) {
+      expand();
+    }
+     _data[size()] = newVal;
   }
 
 
   //inserts an item at index
   public void add( int index, int newVal )
   {
-
+    for (int i = size() - 1; i > index; i--) {
+      _data[i + 1] = _data[i];
+    }
+    _data[index] = newVal;
   }
 
 
@@ -101,7 +104,12 @@ return number of meaningful items in _data
   //shifts elements left to fill in newly-empted slot
   public void remove( int index )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    int preSize = size();
+    _data[index] = 0;
+    //this.leftJustify();
+    for (int i = index; i < preSize; i++) {
+      _data[i] = _data[i + 1];
+    } 
   }
 
 
@@ -112,10 +120,15 @@ return number of meaningful items in _data
     for (int i : _data) {
       if (i == 0) {
         return result;
+      }
+      result += 1;
     }
-    result += 1;
-  }
     return result;
+  }
+
+  //reformats the array to be left-justified, moves all significant terms (in order of L-R) to the start of the array
+  public void leftJustify() {
+    
   }
 
 
@@ -123,21 +136,20 @@ return number of meaningful items in _data
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
+    
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
       for( int i = 0; i < curtis._data.length; i++ ) {
-      curtis.set( i, i * 2 );
+        curtis.set( i, i * 2 );
       }
       System.out.println("Printing populated SuperArray curtis...");
       System.out.println(curtis);
       for( int i = 0; i < 3; i++ ) {
-      curtis.expand();
-      System.out.println("Printing expanded SuperArray curtis...");
-      System.out.println(curtis);
-      System.out.println("new length of underlying array: "
-      + curtis._data.length );
+        curtis.expand();
+        System.out.println("Printing expanded SuperArray curtis...");
+        System.out.println(curtis);
+        System.out.println("new length of underlying array: " + curtis._data.length );
       }
       SuperArray mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
@@ -164,7 +176,6 @@ return number of meaningful items in _data
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
 
