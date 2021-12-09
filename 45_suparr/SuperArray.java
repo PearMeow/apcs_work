@@ -4,9 +4,9 @@
 // 2021-12-08
 // time spent: 0.5 hours
 // DISCO
-// 
+// The type that an abstract method in ListInt returns must be the same type that is returned in SuperArray
 // QCC
-//
+// How do you test methods in ListInt?
 
 
 public class SuperArray implements ListInt

@@ -1,10 +1,10 @@
 public interface ListInt {
 
-    public boolean add(int newVal);
+    public void add(int newVal);
 
-    public int add(int index, int newVal);
+    public void add(int index, int newVal);
     
-    public int remove(int index);
+    public void remove(int index);
 
     public int size();
 
