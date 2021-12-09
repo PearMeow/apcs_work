@@ -109,56 +109,8 @@ public class SuperArray implements ListInt
   //main method for testing
   public static void main( String[] args )
   {
-      SuperArray curtis = new SuperArray();
-      System.out.println( "Printing empty SuperArray curtis..." );
-      System.out.println( curtis );
+   //tests for ListInt...
 
-      for( int i = 0; i < curtis._data.length; i++ ) {
-      curtis.set( i, i * 2 );
-      }
-
-      System.out.println("Printing populated SuperArray curtis...");
-      System.out.println(curtis);
-
-      for( int i = 0; i < 3; i++ ) {
-      curtis.expand();
-      System.out.println("Printing expanded SuperArray curtis...");
-      System.out.println(curtis);
-      System.out.println("new length of underlying array: "
-      + curtis._data.length );
-      }
-
-      SuperArray mayfield = new SuperArray();
-      System.out.println("Printing empty SuperArray mayfield...");
-      System.out.println(mayfield);
-
-      mayfield.add(5);
-      mayfield.add(4);
-      mayfield.add(3);
-      mayfield.add(2);
-      mayfield.add(1);
-
-      System.out.println("Printing populated SuperArray mayfield...");
-      System.out.println(mayfield);
-
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
-      mayfield.remove(3);
-      System.out.println("Printing SuperArray mayfield post-remove...");
-      System.out.println(mayfield);
-
-      mayfield.add(3,99);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      mayfield.add(2,88);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-      mayfield.add(1,77);
-      System.out.println("Printing SuperArray mayfield post-insert...");
-      System.out.println(mayfield);
-    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
 
