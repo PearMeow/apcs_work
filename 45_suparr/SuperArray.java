@@ -1,4 +1,15 @@
-public class SuperArray
+// Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
+// APCS pd07
+// HW44 -- Array of Titanium/Arrays/Using ListInt as an implementation in SuperArray
+// 2021-12-08
+// time spent: 0.5 hours
+// DISCO
+// 
+// QCC
+//
+
+
+public class SuperArray implements ListInt
 {
 
   private int[] _data;  //underlying ("encapsulated") container
