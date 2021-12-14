@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW47 -- ?
-// 2021-12-15w
-// time spent: _ hrs
+// Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
+// APCS pd07
+// HW47 -- Guess Again/Guessing a Number/Using math.random and scanner to make a game about guessing a number
+// 2021-12-14
+// time spent: 0.5 hrs
 
 /***
  * class GuessNumber -- fun fun fun!
@@ -49,7 +49,8 @@ public class GuessNumber
 
     //pick random number in range [a,b]
 
-    /* YOUR CODE HERE */
+    int _target = (int)(Math.random() * _hi); 
+
   }
 
 
@@ -64,9 +65,28 @@ public class GuessNumber
 
     //3 cases: we either found it, too hi, too lo
 
-    /* YOUR CODE HERE */
-  }
+    if (guess == _target) {
+      System.out.print("Correct! It took ");
+      System.out.print(_guessCtr);
+      System.out.print(" tries.");
+      return;
+    }
+    
+    if (guess > _target) {
+      System.out.println("Too high");
+      _hi = guess - 1;
+      _guessCtr++;
+      playRec();
+    }
 
+    if (guess < _target) {
+      System.out.println("Too low");
+      _lo = guess + 1;
+      _guessCtr++;
+      playRec();
+    }
+
+  }
 
   /*==================================================
     void playIter() -- Prompts a user to guess until guess is correct.
@@ -83,7 +103,22 @@ public class GuessNumber
 
       //3 cases: we either found it, too hi, too lo
 
-      /* YOUR CODE HERE */
+      if (guess == _target) {
+        System.out.print("Correct! It took ");
+        System.out.print(_guessCtr);
+        System.out.print(" tries.");
+        return;
+      }
+      
+      if (guess > _target) {
+        System.out.println("Too high");
+        _hi = guess - 1;
+      }
+  
+      if (guess < _target) {
+        System.out.println("Too low");
+        _lo = guess + 1;
+      }
 
       _guessCtr++;
     }
@@ -94,21 +129,21 @@ public class GuessNumber
   public void play()
   {
     //use one or the other below:
-    //playRec();
-    playIter();
+    playRec();
+    //playIter();
   }
 
 
   //main method to run it all
   public static void main( String[] args )
   {
-    /*-----------------------------
+
     //instantiate a new game
     GuessNumber g = new GuessNumber(1,100);
 
     //start the game
     g.play();
-    -----------------------------*/
+
   }
 
 }//end class GuessNumber
