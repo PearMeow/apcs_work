@@ -21,9 +21,9 @@
 
 /***
     DISCO:
-
+    I discovered how scanner actually works.
     QCC:
-
+    Is the recursive version better or is the iterative version better?
  ***/
 import java.util.Scanner;
 
