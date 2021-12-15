@@ -49,7 +49,7 @@ public class GuessNumber
 
     //pick random number in range [a,b]
 
-    int _target = (int)(Math.random() * _hi); 
+    _target = (int)(Math.random() * (_hi - _lo + 1) + _lo); 
 
   }
 
