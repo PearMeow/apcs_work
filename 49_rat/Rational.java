@@ -86,12 +86,14 @@ public class Rational {
     public int compareTo(Rational Rat) {
       double callingObjVal = this.floatVal(); // easier to work w/ raw decimal value for comparisons than numerator / denominator
       double paramObjVal = Rat.floatVal(); // same reasoning as before
-      if (callingObjVal > paramObjVal) {
-        return 1; // ours is larger than theirs
-      } else if (callingObjVal < paramObjVal) {
-        return -1; // ours is smaller than theirs
+      if (callingObjVal instanceof Rational && paramObjVal instanceof Rational) {
+        if (callingObjVal > paramObjVal) {
+          return 1; // ours is larger than theirs
+        } else if (callingObjVal < paramObjVal) {
+          return -1; // ours is smaller than theirs
+        }
+        return 0; // equal
       }
-      return 0; // equal
     }
 
     public static void main(String[] args) {
