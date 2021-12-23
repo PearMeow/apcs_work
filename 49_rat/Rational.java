@@ -2,12 +2,12 @@
 Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
 APCS pd07
 HW42 -- Be Rational/Rationals/Making rationals and adding/subtracting/comparing them
-2021-12-05
+2021-12-22
 time spent: 0.5 hour
 DISCO
-Using an object to change another object doesn't change the first object's value.
+
 QCC
-What tests can break this program?
+
 */
 
 import javax.swing.JSpinner.NumberEditor;
