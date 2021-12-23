@@ -1,13 +1,14 @@
 /*
 Team BPK: Ben Belotser, Perry Huang, Kosta Dubovskiy
 APCS pd07
-HW42 -- Be Rational/Rationals/Making rationals and adding/subtracting/comparing them
+HW49 -- Rational Standards Compliance/Compliance/Making Rational.java comply with Comparable and adding .equals method
 2021-12-22
 time spent: 0.5 hour
 DISCO
 
 QCC
-
+How do you extend make the class extend Comparable and make compareTo take an object instead of a Rational?
+How do you make .equals take an object instead of a Rational?
 */
 
 import javax.swing.JSpinner.NumberEditor;
@@ -96,6 +97,8 @@ public class Rational {
       }
       return -2; 
     }
+
+    public 
 
     public static void main(String[] args) {
         Rational r = new Rational(3, 6);
