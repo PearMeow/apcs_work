@@ -54,7 +54,7 @@ public class BubbleSort
     }
   }
 
-    public void swap(int i, int j) {
+    public static void swap(ArrayList<Integer> _data, int i, int j) {
     int temp = _data.get(j);
     _data.set(j, _data.get(i));
     _data.set(i, temp);
@@ -76,7 +76,7 @@ public class BubbleSort
         for (int i = data.size() - 1; i > 0; i--) {
             for (int j = i - 1; j > 0; j--) {
               if (data.get(i) < data.get(j)) {
-                data.swap(i, j);
+                swap(data, i, j);
                 swaps += 1;
               }
             }
@@ -88,9 +88,9 @@ public class BubbleSort
   // ArrayList-returning bubbleSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
-  public static ArrayList<Comparable> bubbleSort( ArrayList<Integer> input )
+  public static ArrayList<Integer> bubbleSort( ArrayList<Integer> input )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    return _data;
   }
 
 
