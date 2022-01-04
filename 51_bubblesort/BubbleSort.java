@@ -8,8 +8,15 @@
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  *
  * ALGO:
- * 
+ * Infinite while loop.
+ * Is the number of swaps 0? If yes, then reset it to 1 and return.
+ * If not, then proceed.
+ * Compare the rightmost number with its adjacent number. If the adjacent number is more than the other, swap them.
+ * Do this for the entire ArrayList.
+ * For every swap, increment swaps.
+ * Go back up because of infinite while loop.
  * DISCO
+ * I discovered that I'm not really sure of the QCC answers that I put, but am sure that they are reasonably close.
  *
  * QCC
  * q0: If a pass requires no swaps, what do you know?
@@ -17,7 +24,7 @@
  * q1: After pass p, what do you know?
  * a1: The array is ordered up to index p.
  * q2: How many passes are necessary to completely sort?
- * a2: The length of the array.
+ * a2: At most the length of the array.
  
  ******************************/
 
@@ -91,7 +98,7 @@ public class BubbleSort
   /*
   public static ArrayList<Integer> bubbleSort( ArrayList<Integer> input )
   {
-    // code
+    // ran out of time to do this one
   }
   */
 
