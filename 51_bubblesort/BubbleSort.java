@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class BubbleSort
 {
     public static int swaps = 1;
+    public static ArrayList<Integer> _data;
   //~~~~~~~~~~~~~~~~~~~ HELPER METHODS ~~~~~~~~~~~~~~~~~~~
   //precond:  lo < hi && size > 0
   //postcond: returns an ArrayList of random integers
@@ -52,13 +53,20 @@ public class BubbleSort
       al.set( i, al.set( randomIndex, al.get(i) ) );
     }
   }
+
+    public void swap(int i, int j) {
+    int temp = _data.get(j);
+    _data.set(j, _data.get(i));
+    _data.set(i, temp);
+
+  }
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
   // VOID version of bubbleSort
   // Rearranges elements of input ArrayList
   // postcondition: data's elements sorted in ascending order
-  public static void bubbleSortV( ArrayList<Comparable> data )
+  public static void bubbleSortV( ArrayList<Integer> data )
   {
     while (true) {
         if (swaps == 0) {
@@ -80,7 +88,7 @@ public class BubbleSort
   // ArrayList-returning bubbleSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
-  public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
+  public static ArrayList<Comparable> bubbleSort( ArrayList<Integer> input )
   {
     /* YOUR IMPLEMENTATION HERE */
   }
