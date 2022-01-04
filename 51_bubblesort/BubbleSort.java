@@ -69,6 +69,7 @@ public class BubbleSort
   {
     while (true) {
         if (swaps == 0) {
+            swaps = 1;
             return;
         }
         swaps = 0;
