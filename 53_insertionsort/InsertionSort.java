@@ -57,6 +57,13 @@ public class InsertionSort
       al.set( i, al.set( randomIndex, al.get(i) ) );
     }
   }
+
+  public static void swap(ArrayList<Comparable> data, int i, int j) {
+    Comparable temp = data.get(j);
+    data.set(j, data.get(i));
+    data.set(i, temp);
+  }
+
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -65,14 +72,14 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    for(  ) {
+    for(int partition = 0; partition < data.size(); partition++) {
       //partition marks first item in unsorted region
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
       System.out.println( data );
 
       //traverse sorted region from right to left
-      for(  ) {
+      for(int i = partition; i < data.size(); i++ ) {
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
