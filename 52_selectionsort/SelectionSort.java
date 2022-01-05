@@ -73,7 +73,7 @@ public class SelectionSort
 
     for(int pass = 0; pass < data.size() - 1; pass++) {
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-      
+
 
 
       for(  ) {
