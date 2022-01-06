@@ -2,7 +2,7 @@
 // APCS pd07
 // HW53 -- Poker Face/Implementing InsertionSort/
 // 2022-01-05
-// time spent: .1 hrs
+// time spent: 0.2 hrs
 
 /******************************
  * class InsertionSort -- implements InsertionSort algorithm
