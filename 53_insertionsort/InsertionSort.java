@@ -2,7 +2,7 @@
 // APCS pd07
 // HW53 -- Poker Face/Implementing InsertionSort/
 // 2022-01-05
-// time spent: 69 hrs
+// time spent: .1 hrs
 
 /******************************
  * class InsertionSort -- implements InsertionSort algorithm
@@ -14,7 +14,8 @@
  * 4. Repeat until the set is the length of the array.
  *
  * DISCO
- *
+ * Break ends a for loop early.
+ * 
  * QCC
  * q0: How many passes to sort n elements?
  * a0: n passes.
@@ -72,20 +73,21 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    for(int partition = 0; partition < data.size(); partition++) {
+    for(int partition = 0; partition < data.size() - 1; partition++) {
       //partition marks first item in unsorted region
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
       System.out.println( data );
 
       //traverse sorted region from right to left
-      for(int i = partition; i < data.size(); i++ ) {
+      for(int i = partition + 1; i > 0; i--) {
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
-        if (  ) {
+        if ( data.get(i).compareTo(data.get(i - 1)) < 0 ) {
 
           System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
+          swap(data, i, i - 1);
 
         }
         else
@@ -118,7 +120,7 @@ public class InsertionSort
 
   public static void main( String [] args )
   {
-    /*===============for VOID methods=============
+    
       System.out.println("\n*** Testing sort-in-place (void) version... *** ");
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
@@ -134,7 +136,7 @@ public class InsertionSort
       System.out.println( "\nArrayList coco before sorting:\n" + coco );
       insertionSortV(coco);
       System.out.println( "\nArrayList coco after sorting:\n" + coco );
-      ============================================*/
+    
 
     /*==========for AL-returning methods==========
       System.out.println( "*** Testing non-void version... *** " );
