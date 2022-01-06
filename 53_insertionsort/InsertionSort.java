@@ -1,6 +1,6 @@
 // Full Stack Devs: Perry Huang, Salaj Rijal, Ariel Fuchs
 // APCS pd07
-// HW53 -- Poker Face/Implementing InsertionSort/
+// HW53 -- Poker Face/Implementing InsertionSort
 // 2022-01-05
 // time spent: 0.2 hrs
 
