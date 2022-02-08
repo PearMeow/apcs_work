@@ -1,0 +1,36 @@
+Rotating Choco: Perry Huang, Samantha Hua, Eric He
+APCS
+HW60 -- A Termite is-a Turtle, a Thinker is-a Turtle/A new way of sorting/Sorting by making other people do work/
+2022-02-07
+time spent: 0 hrs
+
+DISCO
+Observables:
+* Deck of cards
+* Starts off with 1 person with all the cards
+* Split deck in half, give each half to other people
+* Other people repeat same process
+* When people have only 1 card, they give it back to the person they got it from
+* That person sorts the cards, and then gives it back to the person they got it from
+* Repeat until deck is sorted, or at least we tried to do that in class
+Cleanup:
+* There's no need to wait until 1 card: when a person has one card they just give it back
+which seems like a waste of a step
+* The splitting of cards should be in sync: if the deck is split into 2 hands of 26, then those should
+be split at the same time so there are 4 hands of 13, so everything is in sync and nobody has a hand 
+of 6 while someone else has a hand of 26
+
+QCC
+* Are there more ways to clean up this process, or even an entirely new algorithm that is better?
+* What happens if a person has an odd number of cards?
+
+THINKER FIRMWARE
+when thinker recieves card(s)
+if thinker recieves one card
+    give card back to giver
+else if first time recieving cards
+    split cards in half, give each half to a thinker with no cards
+else 
+    order cards and give back to first giver
+
+
