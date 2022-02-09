@@ -1,4 +1,4 @@
-Rotating Choco: Perry Huang, Samantha Hua, Eric He
+Rotating Cocoa: Perry Huang, Samantha Hua, Eric He
 APCS
 HW60 -- A Termite is-a Turtle, a Thinker is-a Turtle/A new way of sorting/Sorting by making other people do work/
 2022-02-07
