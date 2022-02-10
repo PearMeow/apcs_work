@@ -1,0 +1,9 @@
+Perry Huang
+APCS
+HW63 -- Read/Review/Expand
+2022-02-10
+time spent:
+
+1. a. sentimentVal
+   b. Yes, a string. It returns an icompatible typer error when compiling if an integer is used.
+   c. 
