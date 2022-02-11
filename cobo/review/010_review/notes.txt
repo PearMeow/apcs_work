@@ -2,8 +2,21 @@ Perry Huang
 APCS
 HW63 -- Read/Review/Expand
 2022-02-10
-time spent:
+time spent: 1 hr
 
+Activity 1
 1. a. sentimentVal
-   b. Yes, a string. It returns an icompatible typer error when compiling if an integer is used.
-   c. 
+   b. Yes, a string. It returns an incompatible type error when compiling if an integer is used.
+   c. It returns a float value.
+
+2. aaron       -  -0.32
+   abandoned   -  -0.09
+   happy       -  0.64
+
+3. a. It would compile because the number can be a float and even if the word wasn't there it would be 0.
+   b. It wouldn't compile because there would be an incompatible type error.
+   c. It would return 0 because there is more than 1 word in the string.
+
+Activity 2
+1. unsure why not working and spent too much time
+

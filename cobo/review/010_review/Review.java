@@ -163,11 +163,30 @@ public class Review {
     }
   }
 
+  public static double totalSentiment(String fileName) {
+    double sentimentCounter = 0;
+    String tempWord = "";
+    String review = removePunctuation(textToString(fileName));
+    for (int i = 0; i < review.length(); i++) {
+      if (review.substring(i) == SPACE || i == review.length() - 1) {
+         if (i == review.length() - 1) {
+          tempWord = tempWord + review.substring(i);
+         }
+         sentimentCounter += sentimentVal(tempWord);
+         tempWord = "";
+      }
+      else {
+        tempWord = tempWord + review.substring(i);
+      }
+    }
+    return sentimentCounter;
+  } // unsure why this is not working
+
   public static void main(String[] args) {
-    System.out.println(sentimentVal("aaron"));
+    System.out.println(sentimentVal("aaron is abandoned"));
     System.out.println(sentimentVal("abandoned"));
     System.out.println(sentimentVal("abby"));
-
+    System.out.println(totalSentiment("review.txt"));
 
   }
 }
