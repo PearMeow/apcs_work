@@ -18,10 +18,8 @@ public class StatPrinterApp
     /*=================
       data:
       [2,5,2,3,4,4,4]
-
       desired _freq:
       [0,0,2,1,3,1]
-
       freq initially:
       [0,0,0,0,0,0]
       =================*/
@@ -42,7 +40,7 @@ public class StatPrinterApp
     System.out.println( "sp1 testing... " );
     System.out.println(sp1.max( al1 ));
 
-    
+
     //sp1.printHistogram( 50 );
 
 

@@ -49,102 +49,102 @@
    * Initially, what extra code do you need to get past compiler?
    **/
 
-import java.io.FileReader;
-import java.util.ArrayList;
-
-
-public class StatPrinter
-{
-  // instance variable for frequencies of each integer in input ArrayList
-  private ArrayList <Integer> _frequency;
-
-
-  //*************** QUESTION 02 **************************
-  //precond:  data.size() > 0, each entry b/t 0,100 inclusive
-  //postcond: _frequency.size() set to max(data) + 1
-  //          _frequency.get(i) returns frequency of i in data
-  //eg, for data [2,3,2,5,2,3]
-  //  _frequency would be [0,0,3,2,0,1]
-  // O(n) because it depends on the size of data and iterates once
-  public StatPrinter( ArrayList <Integer> data )
+  import java.io.FileReader;
+  import java.util.ArrayList;
+  
+  
+  public class StatPrinter
   {
-    _frequency = new ArrayList<Integer>();
-    for (int i = 0; i < data.size(); i++) {
-      _frequency.add(0);
-    }
-    for (Integer integer : data) {
-      _frequency.set(integer, _frequency.get(integer)+1);
-    }
-  }
-
-
-  //*************** QUESTION 01 **************************
-  //precond:  data.size() > 0
-  //postcond: returns largest integer in data
-  // O(n) because it depends on the size of data and only iterates once
-  public Integer max( ArrayList <Integer> data )
-  {
-    Integer max = 0;
-    for (int i = 0; i < data.size() - 1; i++) {
-      if (data.get(i) > max) {
-        max = data.get(i);
+    // instance variable for frequencies of each integer in input ArrayList
+    private ArrayList <Integer> _frequency;
+  
+  
+    //*************** QUESTION 02 **************************
+    //precond:  data.size() > 0, each entry b/t 0,100 inclusive
+    //postcond: _frequency.size() set to max(data) + 1
+    //          _frequency.get(i) returns frequency of i in data
+    //eg, for data [2,3,2,5,2,3]
+    //  _frequency would be [0,0,3,2,0,1]
+    // O(n) because it depends on the size of data and iterates once
+    public StatPrinter( ArrayList <Integer> data )
+    {
+      _frequency = new ArrayList<Integer>();
+      for (int i = 0; i < data.size(); i++) {
+        _frequency.add(0);
+      }
+      for (Integer integer : data) {
+        _frequency.set(integer, _frequency.get(integer)+1);
       }
     }
-    return max;
-  }
-
-
-  //*************** QUESTION 03 **************************
-  //postcond: returns true if i > 0 and i < _frequency.size() - 1
-  //          and _frequency.get( i - 1 ) < _frequency.get( i )
-  //          and _frequency.get( i + 1 ) < _frequency.get( i )
-  //          Otherwise, returns false
-  //eg, for _frequency [1,2,1,5,5,8,2,4]
-  //    2 and 8 are local modes, so
-  //    isLocalMode(0) -> false
-  //    isLocalMode(1) -> true
-  //    isLocalMode(5) -> true
-  // O(1) because the size of _frequency doesn't matter as it is only checking one index
-   public boolean isLocalMode( int i )
-   { 
-      return (i > 0 
-             && i < _frequency.size() - 1 
-             && _frequency.get(i - 1) < _frequency.get(i) 
-             && _frequency.get(i) > _frequency.get(i + 1));
-   }
-
-
-  //*************** QUESTION 04 **************************
-  //postcond: returns list of modes in _frequency
-  // O(n) because it iterates through frequency once
-  public ArrayList<Integer> getLocalModes()
-  {
-    ArrayList <Integer> localModes = new ArrayList<Integer>();
-    for (int i = 0; i < _frequency.size(); i++) {
-      if (isLocalMode(i)) {
-        localModes.add(_frequency.get(i));
+  
+  
+    //*************** QUESTION 01 **************************
+    //precond:  data.size() > 0
+    //postcond: returns largest integer in data
+    // O(n) because it depends on the size of data and only iterates once
+    public Integer max( ArrayList <Integer> data )
+    {
+      Integer max = 0;
+      for (int i = 0; i < data.size() - 1; i++) {
+        if (data.get(i) > max) {
+          max = data.get(i);
+        }
       }
+      return max;
     }
-    return localModes;
-  }
-
-
-  //*************** QUESTION 05 **************************
-  //precond:  longestBar > 0
-  // O(n) because it depends on the size of data not the size of frequency
-  // This is because the method prints out an equal number of stars as the 
-  // size of data. Each star is only printed out once so the runtime efficiency is O(n)
-  public void printHistogram( int longestBar )
-  {
-    int factor = longestBar / max(_frequency);
-    for (int i = 0; i < _frequency.size(); i++){
-      System.out.print(i + " : ");
-      for (int j = 0; j < _frequency.get(i) * factor; j++) {
-        System.out.print("*");
+  
+  
+    //*************** QUESTION 03 **************************
+    //postcond: returns true if i > 0 and i < _frequency.size() - 1
+    //          and _frequency.get( i - 1 ) < _frequency.get( i )
+    //          and _frequency.get( i + 1 ) < _frequency.get( i )
+    //          Otherwise, returns false
+    //eg, for _frequency [1,2,1,5,5,8,2,4]
+    //    2 and 8 are local modes, so
+    //    isLocalMode(0) -> false
+    //    isLocalMode(1) -> true
+    //    isLocalMode(5) -> true
+    // O(1) because the size of _frequency doesn't matter as it is only checking one index
+     public boolean isLocalMode( int i )
+     {
+        return (i > 0
+               && i < _frequency.size() - 1
+               && _frequency.get(i - 1) < _frequency.get(i)
+               && _frequency.get(i) > _frequency.get(i + 1));
+     }
+  
+  
+    //*************** QUESTION 04 **************************
+    //postcond: returns list of modes in _frequency
+    // O(n) because it iterates through frequency once
+    public ArrayList<Integer> getLocalModes()
+    {
+      ArrayList <Integer> localModes = new ArrayList<Integer>();
+      for (int i = 0; i < _frequency.size(); i++) {
+        if (isLocalMode(i)) {
+          localModes.add(_frequency.get(i));
+        }
       }
-    System.out.println();
+      return localModes;
     }
-    
-  }
-
-}//end class StatPrinter
+  
+  
+    //*************** QUESTION 05 **************************
+    //precond:  longestBar > 0
+    // O(n) because it depends on the size of data not the size of frequency
+    // This is because the method prints out an equal number of stars as the
+    // size of data. Each star is only printed out once so the runtime efficiency is O(n)
+    public void printHistogram( int longestBar )
+    {
+      int factor = longestBar / max(_frequency);
+      for (int i = 0; i < _frequency.size(); i++){
+        System.out.print(i + " : ");
+        for (int j = 0; j < _frequency.get(i) * factor; j++) {
+          System.out.print("*");
+        }
+      System.out.println();
+      }
+  
+    }
+  
+  }//end class StatPrinter
