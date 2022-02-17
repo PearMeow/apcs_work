@@ -28,6 +28,18 @@ public class QueenBoard
    */
   public boolean solve()
   {
+    for (int i = 0; i < this._board.length; i++) {
+      System.out.println(this.toString());
+      if (solveH(i)) {
+        return true;
+      }
+    }
+
+    for (int i = 0; i < _board.length; i++) {
+      for (int j = 0; j < _board.length; j++) {
+        _board[i][j] = 0;
+      }
+    } 
     return false;
   }
 
@@ -37,7 +49,21 @@ public class QueenBoard
    */
   private boolean solveH( int col ) 
   {
+    for (int i = 0; i < this._board.length; i++) {
+
+        if (addQueen(i, col)) {
+          if (col == this._board.length - 1) {
+            return true;
+          }
+          if (!solveH(col + 1)) {
+            removeQueen(i, col);
+          }
+        }
+
+    }
+    removeQueen(this._board.length - 1, col);
     return false;
+
   }
 
 
@@ -48,6 +74,35 @@ public class QueenBoard
         all negs and 0's replaced with underscore
         all 1's replaced with 'Q'
     */
+
+    String ans = this.toString();
+    String solution = "";
+    
+    for (int i = 0; i < ans.length(); i++) {
+      if (ans.charAt(i) == '\n') {
+        solution += "\n";
+      }
+
+      else if (ans.charAt(i) == '-') {
+        solution += "_";
+        i += 1;
+      }
+
+      else if (ans.charAt(i) == '\t') {
+        solution += "\t";
+      }
+
+      else if (ans.charAt(i) == '1') {
+        solution += "Q";
+      }
+      
+      else {
+        solution += "_";
+      }
+
+    }
+    System.out.println(solution);
+
   }
 
 
@@ -127,7 +182,7 @@ public class QueenBoard
    * precondition: 
    * postcondition: 
    */
-  public String  toString()
+  public String toString()
   {
     String ans = "";
     for( int r = 0; r < _board.length; r++ ) {
@@ -143,37 +198,8 @@ public class QueenBoard
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(5);
-    System.out.println(b);
-    /** should be...
-       0	0	0	0	0	
-       0	0	0	0	0	
-       0	0	0	0	0	
-       0	0	0	0	0	
-       0	0	0	0	0	
-    */
+    QueenBoard b = new QueenBoard(8);
 
-    b.addQueen(3,0);
-    b.addQueen(0,1);
-    System.out.println(b);
-    /** should be...
-       0	1	-1	-2	-1	
-       0	0	-2	0	0	
-       0	-1	0	-1	0	
-       1	-1	-1	-1	-2	
-       0	-1	0	0	0	
-    */
-
-    b.removeQueen(3,0);
-    System.out.println(b);
-    /** should be...
-       0	1	-1	-1	-1	
-       0	0	-1	0	0	
-       0	0	0	-1	0	
-       0	0	0	0	-1	
-       0	0	0	0	0	 
-    */
-    
+    b.solve();
   }
-
 }//end class
