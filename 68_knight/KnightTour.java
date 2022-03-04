@@ -40,9 +40,9 @@
  long it was taking)
  *
  * Mean execution times for boards of size n*n:
- * n=5   .2054s    across 10 executions
- * n=6   2.7166s    across 10 executions
- * n=7   14m 29.416s    across 1 execution
+ * n=5   .2054s       across 10 executions
+ * n=6   2.7166s      across 10 executions
+ * n=7   14m 29.416s  across 1 execution
  * n=8   5m 18.73s    across 1 execution
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
@@ -196,13 +196,13 @@ class TourFinder
    **/
   public void findTour( int x, int y, int moves )
   {
-    // delay(50); //slow it down enough to be followable
+    delay(50); //slow it down enough to be followable
 
     //primary base case: tour completed
     if ( moves == _sideLength*_sideLength && _board[x][y] == 0) {
       _board[x][y] = moves;
       System.out.println( this ); //refresh screen
-      // if a tour has been completed, stop animation
+    // if a tour has been completed, stop animation
       System.exit(0);
       return;
     }
@@ -220,7 +220,7 @@ class TourFinder
 
       System.out.println( this ); //refresh screen
 
-      // delay(1000); //uncomment to slow down enough to view
+      delay(1000); //uncomment to slow down enough to view
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
