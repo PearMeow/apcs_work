@@ -1,8 +1,8 @@
-//Oscar breen , Max Schneider, Perry Huang
+//Oscar Breen , Max Schneider, Perry Huang
 //APCS
 //HW72 -- So So Fast -- algo to find nth smallest of an array
 //2022-03-08
-//time spent: 0.4
+//time spent: 0.4 hrs
 /*
  ALGO
   Partition array

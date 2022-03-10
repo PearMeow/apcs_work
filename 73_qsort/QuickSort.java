@@ -1,27 +1,28 @@
-//Oscar breen , Max Schneider, Perry Huang
-//APCS
-//HW72 -- So So Fast -- algo to find nth smallest of an array
-//2022-03-08
-//time spent: 0.4
+/*Oscar Breen , Max Schneider, Perry Huang
+APCS
+HW73 -- All About the About Face
+2022-03-09
+time spent: 0.5 hrs
 /*
- ALGO
-  Partition array
-	repeat n times with linear 1 increasing c value
-  BCS:
-   looking for smallest value Big O(n) -- only completes one operation once
 
-  WCS
-   looking for nth smallest of an n sized array Big (On^2)-- completes one operation on every element of the array 
-                                                              inside a for loop
+/***
+ * class QuickSort
+ * Implements quicksort algo to sort an array of ints in place
+ *
+ * 1. Summary of QuickSort algorithm:
+ * QSort(arr):
+ *    run partition on array, 
+	run partiion on each part of that partiitoned array
+		repeat until the low part is not less than the high
+ * 2a. Worst pivot choice and associated run time:
+ *     any that is element reliant Big O(n^2)
+ * 2b. Best pivot choice and associated run time:
+ *     L-R Big O(n^2)
+ * 3. Approach to handling duplicate values in array:
+ *    consistently view as smaller
+ **/
 
-DISCO
-   Partition is useful
-
-QCC
-   do we rly havce to use parititon
-
-*/
-public class FastSelect
+public class QuickSort
 {
   //--------------v  HELPER METHODS  v--------------
   //swap values at indices x, y in array o
@@ -63,182 +64,88 @@ public class FastSelect
   //--------------^  HELPER METHODS  ^--------------
 
 
+
+
   /**
-   * int Partition(int[],int,int,int)
-   * DESCRIP
-   * chooses an element as a "center" (don't know actual terminology), and works around that
-    moves that center to index b, and then partitions subarray between indicies a and b-1
-    into 2 parts: the part that consists of elemets that are smaller than the center element
-    (on the left) and the part that consists of elements that are at least as large as the
-    center element (on the right). Then, puts the center element between the 2 parts.
-   * @param arr
-   * @param a
-   * @param b
-   * @param c
-   * @return int
-   *
+   * void qsort(int[])
+   * @param d -- array of ints to be sorted in place
    */
-  public static int Partition( int arr[], int a, int b, int c)
+  public static void qsort( int[] d )
   {
-    /** Copy and Pasted for convenience
-    * algo as pseudocode:
-    * ------------------------------
-    *     v = arr[c]
-    *     swap arr[c], arr[b]
-    *     s = a
-    *     for i in [a..b-1]
-    *         if arr[i] < v
-    *             swap arr[s], arr[i]
-    *             s+=1
-    *     swap arr[b], arr[s]
-    */
-    int v = arr[c]; // CHOOSE THE CENTER ELEMENT
-    swap(c,b,arr); // SWAP CENTER ELEMENT TO END OF SUBARRAY
-    int s=a;
-    for(int i = a; i < b; i++) { //PERFORM SWAPS UNTIL THE ARRAY IS PARTITIONED INTO THE AFOREMENTIONED PARTS
-      if (arr[i] < v) {
-        swap(s,i,arr);
-        s+=1; // MOVES THE LINE OF DIVISION BETWEEN THE TWO PARTS OF THE SUBARRAY
-      }
+    qsorthelper(0,d.length -1 ,d);
+  }
+
+  //you may need a helper method...
+  public static void qsorthelper (int low, int high, int[] arr) {
+    if (low < high) {
+      int pivpoint = Partition.partition(arr, low, high, low);
+      qsorthelper(low,pivpoint-1,arr);
+      qsorthelper(pivpoint+1,high,arr);
     }
-    swap(b,s,arr); // PLACES CENTER ELEMENT AT THE END OF THE FIRST PART OF THE SUBARRAY
-    return arr[s];
-  }//end Partition
+  }
 
-
-
-  //finds the nth smallest value of the array
- public static int FastSelect(int[] arr, int n)
- {
- if( arr.length == 1)
-     return arr[0];
-int res = 0;
-   for( int test = 0; test < n; test++){
-	Partition(arr, 0, (arr.length - 1), test);
-         
-	res = arr[test];
-   }
-  return res;
- } // end FastSelect
 
 
   //main method for testing
   public static void main( String[] args )
   {
 
-
-    //init test arrays of magic numbers
-    int[] arr1 = {8,21,17,69,343};
-    int[] arr3 = {1,28,33,4982,37};
-    int[] arr4 = {17,4,5,9000,6};
-    int[] arr5 = {3,0,16,599,1024};
-    int[] arr6 = {7,1,5,12,3};
-    int[] arr7 = {900, 800 , 700, 600 , 500};
-    int[] arr8 = {2};
-    /**
-    System.out.println("arr6: ");
-    printArr(arr6);
-    Partition(arr6,0,4,2);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + 2 +"...");
-    printArr(arr6);
-    System.out.println("-----------------------");
-    */
-
-
-
-  // Fast select testing
-
-    System.out.println(" third smallest arr4; ");
-    printArr(arr4);
-    System.out.println(""+FastSelect(arr4,3));
-    System.out.println("-----------------------");
-
-
-    System.out.println(" second smallest arr1: ");
+    //get-it-up-and-running, static test case:
+    int [] arr1 = {7,1,5,12,3};
+    System.out.println("\narr1 init'd to: " );
     printArr(arr1);
-    System.out.println(""+FastSelect(arr1,2));
-    System.out.println("-----------------------");
 
-    System.out.println(" third smallest arr3: ");
-    printArr(arr3);
-    System.out.println(""+FastSelect(arr3,3));
-    System.out.println("-----------------------");
-
-    System.out.println(" WCS arr7: ");
-    printArr(arr7);
-    System.out.println(""+FastSelect(arr7,5));
-    System.out.println("-----------------------");
-
-    System.out.println(" BCS arr8: ");
-    printArr(arr8);
-    System.out.println(""+FastSelect(arr8,1));
-    System.out.println("-----------------------");
-
-
-
-
-/*
-    // run Partition on each array,
-    // holding a & b fixed, varying c...
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr1: ");
+    qsort( arr1 );
+    System.out.println("arr1 after qsort: " );
     printArr(arr1);
-    Partition(arr1,0,4,testC);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr1);
-    System.out.println("-----------------------");
-   }
-    // Where be arr2?
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr3:");
-    printArr(arr3);
-    Partition(arr3,0,4,testC);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr3);
-    System.out.println("-----------------------");
-   }
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr4:");
-    printArr(arr4);
-    Partition(arr4,0,4,testC);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr4);
-    System.out.println("-----------------------");
-   }
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr6:");
-    printArr(arr6);
-    Partition(arr6,0,4,testC);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr6);
-    System.out.println("-----------------------");
-   }
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr5:");
-    printArr(arr5);
-    Partition(arr5,0,4,testC);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr5);
-    System.out.println("-----------------------");
-   }
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr7:");
-    printArr(arr7);
-    Partition(arr7,0,4,testC);
-    System.out.println("after Partition w/ a=0,b=4,c="
-    + testC +"...");
-    printArr(arr7);
-    System.out.println("-----------------------");
 
-    }
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    // randomly-generated arrays of n distinct vals
+    int[] arrN = new int[10];
+    for( int i = 0; i < arrN.length; i++ )
+    arrN[i] = i;
+
+    System.out.println("\narrN init'd to: " );
+    printArr(arrN);
+
+    shuffle(arrN);
+    System.out.println("arrN post-shuffle: " );
+    printArr(arrN);
+
+    qsort( arrN );
+    System.out.println("arrN after sort: " );
+    printArr(arrN);
+
+
+
+
+    //get-it-up-and-running, static test case w/ dupes:
+    int [] arr2 = {7,1,5,12,3,7};
+    System.out.println("\narr2 init'd to: " );
+    printArr(arr2);
+
+    qsort( arr2 );
+    System.out.println("arr2 after qsort: " );
+    printArr(arr2);
+
+
+    // arrays of randomly generated ints
+    int[] arrMatey = new int[20];
+    for( int i = 0; i < arrMatey.length; i++ )
+    arrMatey[i] = (int)( 48 * Math.random() );
+
+    System.out.println("\narrMatey init'd to: " );
+    printArr(arrMatey);
+
+    shuffle(arrMatey);
+    System.out.println("arrMatey post-shuffle: " );
+    printArr(arrMatey);
+
+    qsort( arrMatey );
+    System.out.println("arrMatey after sort: " );
+    printArr(arrMatey);
+    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
   }//end main
 
-}//end class Partition
+}//end class QuickSort

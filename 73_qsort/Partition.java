@@ -1,8 +1,9 @@
-// Clyde Sinclair
-// APCS pd0
-// HW71 -- Reading for intent, tracing for VICTORY
-// 2022-03-07m
-// time spent:  hrs
+/*Oscar Breen , Max Schneider, Perry Huang
+APCS
+HW73 -- All About the About Face
+2022-03-09
+time spent: 0.5 hrs
+/*
 
 /***
  * class Parition (née Mysterion)
