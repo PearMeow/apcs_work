@@ -24,6 +24,7 @@ time spent: 0.5 hrs
 
 public class QuickSort
 {
+  private static int partitions = 0;
   //--------------v  HELPER METHODS  v--------------
   //swap values at indices x, y in array o
   public static void swap( int x, int y, int[] o )
@@ -73,6 +74,8 @@ public class QuickSort
   public static void qsort( int[] d )
   {
     qsorthelper(0,d.length -1 ,d);
+    System.out.println(partitions + " partitions");
+    partitions = 0;
   }
 
   //you may need a helper method...
@@ -80,6 +83,7 @@ public class QuickSort
     if (low < high) {
       int pivpoint = Partition.partition(arr, low, high, low);
       qsorthelper(low,pivpoint-1,arr);
+      partitions++;
       qsorthelper(pivpoint+1,high,arr);
     }
   }
@@ -89,62 +93,73 @@ public class QuickSort
   //main method for testing
   public static void main( String[] args )
   {
-
-    //get-it-up-and-running, static test case:
-    int [] arr1 = {7,1,5,12,3};
+    int [] arr1 = {0, 1, 2, 3, 4, 5, 6};
     System.out.println("\narr1 init'd to: " );
     printArr(arr1);
-
     qsort( arr1 );
-    System.out.println("arr1 after qsort: " );
     printArr(arr1);
 
-    // randomly-generated arrays of n distinct vals
-    int[] arrN = new int[10];
-    for( int i = 0; i < arrN.length; i++ )
-    arrN[i] = i;
-
-    System.out.println("\narrN init'd to: " );
-    printArr(arrN);
-
-    shuffle(arrN);
-    System.out.println("arrN post-shuffle: " );
-    printArr(arrN);
-
-    qsort( arrN );
-    System.out.println("arrN after sort: " );
-    printArr(arrN);
-
-
-
-
-    //get-it-up-and-running, static test case w/ dupes:
-    int [] arr2 = {7,1,5,12,3,7};
-    System.out.println("\narr2 init'd to: " );
+    int [] arr2 = {3, 1, 0, 2, 5,4,6};
+    System.out.println("\narr1 init'd to: " );
     printArr(arr2);
-
     qsort( arr2 );
-    System.out.println("arr2 after qsort: " );
     printArr(arr2);
 
+    // //get-it-up-and-running, static test case:
+    // int [] arr1 = {7,1,5,12,3};
+    // System.out.println("\narr1 init'd to: " );
+    // printArr(arr1);
 
-    // arrays of randomly generated ints
-    int[] arrMatey = new int[20];
-    for( int i = 0; i < arrMatey.length; i++ )
-    arrMatey[i] = (int)( 48 * Math.random() );
+    // qsort( arr1 );
+    // System.out.println("arr1 after qsort: " );
+    // printArr(arr1);
 
-    System.out.println("\narrMatey init'd to: " );
-    printArr(arrMatey);
+    // // randomly-generated arrays of n distinct vals
+    // int[] arrN = new int[10];
+    // for( int i = 0; i < arrN.length; i++ )
+    // arrN[i] = i;
 
-    shuffle(arrMatey);
-    System.out.println("arrMatey post-shuffle: " );
-    printArr(arrMatey);
+    // System.out.println("\narrN init'd to: " );
+    // printArr(arrN);
 
-    qsort( arrMatey );
-    System.out.println("arrMatey after sort: " );
-    printArr(arrMatey);
-    /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    // shuffle(arrN);
+    // System.out.println("arrN post-shuffle: " );
+    // printArr(arrN);
+
+    // qsort( arrN );
+    // System.out.println("arrN after sort: " );
+    // printArr(arrN);
+
+
+
+
+    // //get-it-up-and-running, static test case w/ dupes:
+    // int [] arr2 = {7,1,5,12,3,7};
+    // System.out.println("\narr2 init'd to: " );
+    // printArr(arr2);
+
+    // qsort( arr2 );
+    // System.out.println("arr2 after qsort: " );
+    // printArr(arr2);
+
+
+    // // arrays of randomly generated ints
+    // int[] arrMatey = new int[20];
+    // for( int i = 0; i < arrMatey.length; i++ )
+    // arrMatey[i] = (int)( 48 * Math.random() );
+
+    // System.out.println("\narrMatey init'd to: " );
+    // printArr(arrMatey);
+
+    // shuffle(arrMatey);
+    // System.out.println("arrMatey post-shuffle: " );
+    // printArr(arrMatey);
+
+    // qsort( arrMatey );
+    // System.out.println("arrMatey after sort: " );
+    // printArr(arrMatey);
+    // /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//end main
 
