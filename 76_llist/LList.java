@@ -1,3 +1,9 @@
+//Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+//APCS pd07
+//HW76 -- We Got a Little Ol' Convoy
+//2022-03-14
+//time spent: 999 hrs
+
 /***
  * class LList
  * Implements a linked list of LLNodes, each containing String data
