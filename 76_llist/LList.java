@@ -2,9 +2,26 @@
 //APCS pd07
 //HW76 -- We Got a Little Ol' Convoy
 //2022-03-14
-//time spent: 999 hrs
+//time spent: 3 hrs
+
+
+
 
 /***
+Disco:
+*This is really hard
+*Never ever ever change _head
+*Always add pointers to avoid JGC
+
+QCC:
+what is the value of a linked list?
+Real world implementatiosn
+
+
+
+
+
+
  * class LList
  * Implements a linked list of LLNodes, each containing String data
  **/
@@ -19,8 +36,8 @@ public class LList implements List //interface def must be in this dir
   // constructor -- initializes instance vars
   public LList( )
   {
-    _head = new LLNode("bruh", null);
-    _size = 1;
+    _head = new LLNode(null, null);
+    _size = 0;
   }
 
 
@@ -28,32 +45,35 @@ public class LList implements List //interface def must be in this dir
 
   public boolean add( String newVal )
   {
-    LLNode temp = _head;
+    if (_size == 0) {
+      _head = new LLNode(newVal, null);
+    } else {
+      LLNode temp = _head;
 
-//   _head.setCargo(newVal);
-     while(temp.getNext() != null){
-	temp = temp.getNext();
-     }
-     LLNode val = new LLNode(newVal, null);
-      temp.setNext(val);
-     return true;
+       while(temp.getNext() != null){
+  	      temp = temp.getNext();
+       }
+       LLNode val = new LLNode(newVal, null);
+        temp.setNext(val);
+    }
+    _size ++;
+    return true;
+
   }
 
 
   public String get( int index )
   {
-    String ind = "";
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
-      if (index == 0)
-	ind = (_head.getCargo());
-     else
-	for(int i = 0; i <= index; i++){
-		ind = _head.getCargo();
-		_head = _head.getNext();
-	}
-    return ind;
-} 
+      LLNode temp = _head;
+      int ctr = 0;
+      while (ctr <= index - 1) {
+       temp = temp.getNext();
+       ctr ++;
+      }
+      return temp.getCargo();
+}
 
 
   public String set( int index, String newVal )
@@ -61,37 +81,34 @@ public class LList implements List //interface def must be in this dir
 //    String res = "";
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
-     LLNode boc = _head;
-     for( int i = 0; i < index; i++){
-     	boc = boc.getNext();
+      LLNode temp = _head;
+      int ctr = 0;
+     while (ctr <= index - 2) {
+       temp = temp.getNext();
+       ctr ++;
      }
-     boc.setCargo(newVal);
-    return newVal;
-    // YOUR CODE HERE
+     LLNode saved = temp.getNext();
+     LLNode newby = new LLNode(newVal, saved);
+     temp.setNext(newby);
+     return newVal;
   }
 
 
   //return number of nodes in list
   public int size()
   {
-    int i = 0;
-    LLNode temp = _head;
-    while( temp != null ) {
-      System.out.println( temp );
-      temp = temp.getNext();
-      i++;
-    }
-    return i;
+    return _size;
   }
 
   //--------------^  List interface methods  ^--------------
 
-
+/*
 
   override inherited toString
+  */
   public String toString()
   {
-    // YOUR CODE HERE
+    return _head.toString();
   }
 
   //main method for testing
@@ -122,9 +139,15 @@ public class LList implements List //interface def must be in this dir
     System.out.println( "2nd item is: " + james.get(1) );
 
     james.set( 1, "got" );
-    System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
+    System.out.println( "...and now 2nd item is: " + james.get(1) );
 
     System.out.println( james );
+
+    james.set( 3, "him" );
+    System.out.println( "...and now fourth item is: " + james.get(3) );
+
+    System.out.println( james );
+
   }
 
 }//end class LList
