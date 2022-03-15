@@ -86,14 +86,14 @@ public class LList implements List //interface def must be in this dir
 
   //--------------^  List interface methods  ^--------------
 
-/*
+
 
   override inherited toString
   public String toString()
   {
     // YOUR CODE HERE
   }
-*/
+
   //main method for testing
   public static void main( String[] args )
   {
