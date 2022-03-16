@@ -20,7 +20,7 @@ public interface List
   public void add( int index, String newVal );
 
   //remove node from list, return its data
-//  public String remove( int index );
+  public String remove( int index );
 
   //return data in element at position i
   public String get( int i );
@@ -30,5 +30,6 @@ public interface List
 
   //return length of list
   public int size();
+
 
 }//end interface

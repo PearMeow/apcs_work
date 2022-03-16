@@ -23,7 +23,7 @@ public class LList implements List //your List interface must be in same dir
     
   public boolean add( String newVal )
   {
-    LLNode tmp = new LLNode( newVal, _head );
+    LLNode tmp = new LLNode( newVal, _head , null);
     _head = tmp;
     _size++;
     return true;
@@ -80,7 +80,7 @@ public class LList implements List //your List interface must be in same dir
     if ( index < 0 || index >= size() )
 	    throw new IndexOutOfBoundsException();
 
-    LLNode newNode = new LLNode( newVal, null );
+    LLNode newNode = new LLNode( newVal, null, null );
 
     //if index==0, insert node before head node
     if ( index == 0 ) 
@@ -94,6 +94,7 @@ public class LList implements List //your List interface must be in same dir
 
 	    //insert new node
 	    newNode.setNext( tmp.getNext() );
+      newNode.setPrev(tmp);
 	    tmp.setNext( newNode );
 
 	    //increment size attribute
@@ -155,56 +156,56 @@ public class LList implements List //your List interface must be in same dir
 
 
   //main method for testing
-  public static void main( String[] args )
-  {
+  // public static void main( String[] args )
+  // {
 
-    LList james = new LList();
+  //   LList james = new LList();
 
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+  //   System.out.println( james );
+  //   System.out.println( "size: " + james.size() );
 
-    james.add("beat");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+  //   james.add("beat");
+  //   System.out.println( james );
+  //   System.out.println( "size: " + james.size() );
 
-    james.add("a");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+  //   james.add("a");
+  //   System.out.println( james );
+  //   System.out.println( "size: " + james.size() );
 
-    james.add("need");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+  //   james.add("need");
+  //   System.out.println( james );
+  //   System.out.println( "size: " + james.size() );
 
-    james.add("I");
-    System.out.println( james );
-    System.out.println( "size: " + james.size() );
+  //   james.add("I");
+  //   System.out.println( james );
+  //   System.out.println( "size: " + james.size() );
 
-    System.out.println( "2nd item is: " + james.get(1) );
+  //   System.out.println( "2nd item is: " + james.get(1) );
 
-    System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
-    System.out.println( james );
+  //   System.out.println( "...and now 2nd item is: " + james.set(1,"got") );
+  //   System.out.println( james );
 
-    james.add(0,"whut");
-    System.out.println( "...after add(0,whut): " );
-    System.out.println( james );
+  //   james.add(0,"whut");
+  //   System.out.println( "...after add(0,whut): " );
+  //   System.out.println( james );
 
-    james.add(4,"phat");
-    System.out.println( "...after add(4,phat): " );
-    System.out.println( james );
+  //   james.add(4,"phat");
+  //   System.out.println( "...after add(4,phat): " );
+  //   System.out.println( james );
 
-    System.out.println( "...after remove last: " 
-                        + james.remove( james._size-1) );
-    System.out.println( james );
+  //   System.out.println( "...after remove last: " 
+  //                       + james.remove( james._size-1) );
+  //   System.out.println( james );
 
-    System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james );
+  //   System.out.println( "...after remove(0): " + james.remove(0) );
+  //   System.out.println( james );
 
-    System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james );
+  //   System.out.println( "...after remove(0): " + james.remove(0) );
+  //   System.out.println( james );
 
-    System.out.println( "...after remove(0): " + james.remove(0) );
-    System.out.println( james );
-  }
+  //   System.out.println( "...after remove(0): " + james.remove(0) );
+  //   System.out.println( james );
+  // }
 
 }//end class LList
 
