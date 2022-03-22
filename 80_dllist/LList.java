@@ -1,13 +1,13 @@
 /***
  * class LList v3
- * Implements a linked list of DLLNodes, each containing String data
+ * Implements a linked list of DLLNodes, each containing o data
  **/
 
-public class LList implements List //your List.java must be in same dir
+public class LList<o> implements List<o> //your List.java must be in same dir
 {
 
   //instance vars
-  private DLLNode _head, _tail; //pointers to first and last nodes
+  private DLLNode<o> _head, _tail; //pointers to first and last nodes
   private int _size;
 
   // constructor -- initializes instance vars
@@ -21,7 +21,7 @@ public class LList implements List //your List.java must be in same dir
   //--------------v  List interface methods  v--------------
 
   //add a node to end of list
-  public boolean add( String newVal )
+  public boolean add( o newVal )
   {
     addLast( newVal );
     return true; //per Java API spec
@@ -29,7 +29,7 @@ public class LList implements List //your List.java must be in same dir
 
 
   //insert a node containing newVal at position index
-  public void add( int index, String newVal )
+  public void add( int index, o newVal )
   {
     if ( index < 0 || index > size() )
       throw new IndexOutOfBoundsException();
@@ -37,20 +37,20 @@ public class LList implements List //your List.java must be in same dir
     else if ( index == size() )
       addLast( newVal );
 
-    DLLNode newNode = new DLLNode( newVal, null, null );
+    DLLNode<o> newNode = new DLLNode<o>( newVal, null, null );
 
     //if index==0, insert node before head node
     if ( index == 0 )
       addFirst( newVal );
     else {
-      DLLNode tmp1 = _head; //create alias to head
+      DLLNode<o> tmp1 = _head; //create alias to head
 
       //walk tmp1 to node before desired node
       for( int i=0; i < index-1; i++ )
         tmp1 = tmp1.getNext();
 
       //init a pointer to node at insertion index
-      DLLNode tmp2 = tmp1.getNext(); 
+      DLLNode<o> tmp2 = tmp1.getNext(); 
 
       //insert new node
       newNode.setNext( tmp2 );
@@ -65,7 +65,7 @@ public class LList implements List //your List.java must be in same dir
 
 
   //remove node at pos index, return its cargo
-  public String remove( int index )
+  public o remove( int index )
   {
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
@@ -75,14 +75,14 @@ public class LList implements List //your List.java must be in same dir
     else if ( index == size()-1 )
       return removeLast();
     else {
-      DLLNode tmp1 = _head; //create alias to head
+      DLLNode<o> tmp1 = _head; //create alias to head
 
       //walk to node before desired node
       for( int i=0; i < index-1; i++ ) {
         tmp1 = tmp1.getNext();
       }
       //check target node's cargo hold
-      String retVal = tmp1.getNext().getCargo();
+      o retVal = tmp1.getNext().getCargo();
 
       //remove target node
       tmp1.setNext( tmp1.getNext().getNext() );
@@ -95,13 +95,13 @@ public class LList implements List //your List.java must be in same dir
   }
 
 
-  public String get( int index )
+  public o get( int index )
   {
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    String retVal;
-    DLLNode tmp = _head; //create alias to head
+    o retVal;
+    DLLNode<o> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
@@ -113,19 +113,19 @@ public class LList implements List //your List.java must be in same dir
   }
 
 
-  public String set( int index, String newVal )
+  public o set( int index, o newVal )
   {
     if ( index < 0 || index >= size() )
       throw new IndexOutOfBoundsException();
 
-    DLLNode tmp = _head; //create alias to head
+    DLLNode<o> tmp = _head; //create alias to head
 
     //walk to desired node
     for( int i=0; i < index; i++ )
       tmp = tmp.getNext();
 
     //store target node's cargo
-    String oldVal = tmp.getCargo();
+    o oldVal = tmp.getCargo();
 
     //modify target node's cargo
     tmp.setCargo( newVal );
@@ -142,10 +142,10 @@ public class LList implements List //your List.java must be in same dir
 
   //--------------v  Helper methods  v--------------
 
-  public void addFirst( String newFirstVal )
+  public void addFirst( o newFirstVal )
   {
     //insert new node before first node (prev=null, next=_head)
-    _head = new DLLNode( newFirstVal, null, _head );
+    _head = new DLLNode<o>( newFirstVal, null, _head );
 
     if ( _size == 0 )
       _tail = _head;
@@ -155,10 +155,10 @@ public class LList implements List //your List.java must be in same dir
   }
 
 
-  public void addLast( String newLastVal )
+  public void addLast( o newLastVal )
   {
     //insert new node after last node (prev=_last, next=null)
-    _tail = new DLLNode( newLastVal, _tail, null );
+    _tail = new DLLNode<o>( newLastVal, _tail, null );
 
     if ( _size == 0 )
       _head = _tail;
@@ -168,14 +168,14 @@ public class LList implements List //your List.java must be in same dir
   }
 
 
-  public String getFirst() { return _head.getCargo(); }
+  public o getFirst() { return _head.getCargo(); }
 
-  public String getLast() { return _tail.getCargo(); }
+  public o getLast() { return _tail.getCargo(); }
 
 
-  public String removeFirst()
+  public o removeFirst()
   {
-    String retVal = getFirst();
+    o retVal = getFirst();
     if ( size() == 1 ) {
       _head = _tail = null;
     }
@@ -187,9 +187,9 @@ public class LList implements List //your List.java must be in same dir
     return retVal;
   }
 
-  public String removeLast()
+  public o removeLast()
   {
-    String retVal = getLast();
+    o retVal = getLast();
     if ( size() == 1 ) {
       _head = _tail = null;
     }
@@ -207,7 +207,7 @@ public class LList implements List //your List.java must be in same dir
   public String toString()
   {
     String retStr = "HEAD->";
-    DLLNode tmp = _head; //init tr
+    DLLNode<o> tmp = _head; //init tr
     while( tmp != null ) {
       retStr += tmp.getCargo() + "->";
       tmp = tmp.getNext();
