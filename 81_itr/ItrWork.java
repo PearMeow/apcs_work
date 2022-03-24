@@ -10,10 +10,17 @@ time spent: 0.4 hrs
  * Facilitates familiarization with iterators
 
     DISCO
-    
+    Iterator can be given a type.
+    Iterators and for each loops are very similar.
+    You need to be careful to not .next too many times.
+
     QCC
+    Why do iterators exist?
+    Are we going to write our own iterator?
 
     SUMMARY THE FIRST:
+    Iterator is an interface with 3 methods. It can be applied to multiple classes such as maps, sets, and lists. 
+    The first method is hasNext.
 
     SUMMARY THE SECOND:
 
