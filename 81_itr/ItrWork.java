@@ -1,6 +1,6 @@
 /*
 Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
-APCS 
+APCS
 HW81 -- Thank You, Next
 2022-03-24
 time spent: 0.4 hrs
@@ -19,11 +19,11 @@ time spent: 0.4 hrs
     Are we going to write our own iterator?
 
     SUMMARY THE FIRST:
-    Iterator is an interface with 3 methods. It can be applied to multiple classes such as maps, sets, and lists. 
-    The first method is hasNext.
+    Iterator is an interface with 3 methods. It can be applied to multiple classes such as maps, sets, and lists.
+    The first method is hasNext, which checks if th elist has another item. The seocnd is next, which moves the iterator and reutrns the next item. The last is remove which can only be use onced per nexy, and removes the next item.
 
     SUMMARY THE SECOND:
-
+    We have to use an iterator and for each loop to explore different waus to print a list, only show the odds, and remove th evens
 **/
 
 
@@ -71,7 +71,7 @@ public class ItrWork
     for (int i : L) {
         if (i % 2 == 1) {
             retList.add(i);
-        }     
+        }
     }
     return retList;
   }
@@ -83,7 +83,7 @@ public class ItrWork
     List<Integer> retList = new ArrayList<Integer> ();
     Iterator<Integer> it = L.iterator();
     while (it.hasNext()) {
-        Integer a = it.next(); 
+        Integer a = it.next();
         if (a % 2 == 1) {
             retList.add(a);
         }
@@ -98,7 +98,7 @@ public class ItrWork
   {
     Iterator<Integer> it = L.iterator();
     while (it.hasNext()) {
-        Integer a = it.next(); 
+        Integer a = it.next();
         if (a % 2 == 0) {
             it.remove();
         }
@@ -121,7 +121,7 @@ public class ItrWork
     // a) using a FOREACH loop
     for (int i : L) {
         System.out.print(i + " ");
-        
+
     }
     System.out.println("");
 
