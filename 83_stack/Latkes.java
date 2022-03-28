@@ -1,3 +1,9 @@
+// Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+// HW83 -- Stacks on Stacks 
+// APCS
+// 2022-03-28
+// Time spent: 0.5 hrs
+
 /***
  * class Latkes
  * v1
@@ -10,7 +16,7 @@
 
     QCC
     Is it possible to make a pop method that removes at index 0 that is more efficient?
-    
+
  **/
 
 
