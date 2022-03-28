@@ -1,4 +1,17 @@
 /***
+Max Schneider, Perry Huang, Oscar Breen
+APCS
+HW<nn> -- <Roll Your Own Iterator/ AUgmenting Linked list to make it iterable
+2022-03-28
+time spent: 0.5
+
+DISCO:
+	The distinciton between getNext and getCargo is important, paired in most case
+	_dummy is very useful
+	classes can exist inside other classes
+QCC
+	should we use this class in class setup?
+
  * class LList v6
  * Implements a linked list of DLLNodes.
  * Version 06 is iterable via FOREACH loop
@@ -154,7 +167,7 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable"
   //return an Iterator over this list
    public Iterator<T> iterator()
    {
-     Iterator<T> itr = this.iterator();
+     MyIterator itr = new MyIterator(this);
      return itr;
    }
 
@@ -253,9 +266,9 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable"
     private boolean _okToRemove; // flag indicates next() was called
 
     //constructor
-    public MyIterator()
+    public MyIterator(LList ref)
     {
-
+      _dummy = ref._head;
     }
 
     //-----------------------------------------------------------
@@ -271,6 +284,9 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable"
     public T next()
     {
       _okToRemove = true;
+      T returner =  _dummy.getNext().getCargo();
+      _dummy = _dummy.getNext();
+      return returner;
 
     }
 
@@ -280,18 +296,20 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable"
     //               (...so that hasNext() will not crash)
     public void remove()
     {
-            /* YOUR CODE HERE */
+      if (_okToRemove) {
+        _dummy.setPrev(_dummy.getPrev().getPrev());
+      }
+      _okToRemove = false;
     }
     //--------------^  Iterator interface methods  ^-------------
     //-----------------------------------------------------------
-  }//*************** end inner class MyIterator ***************
+  }//*************** end inner class MyIterator ***************/
 
 
 
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     LList james = new LList();
 
     System.out.println("initially: " );
@@ -334,7 +352,6 @@ public class LList<T> implements List<T> //Q: Why no "implements Iterable"
 
     System.out.println( "...after remove(0): " + james.remove(0) );
     System.out.println( james + "\tsize: " + james.size() );
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
 }//end class LList
