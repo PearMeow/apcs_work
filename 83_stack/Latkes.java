@@ -9,7 +9,8 @@
     DISCO
 
     QCC
-
+    Is it possible to make a pop method that removes at index 0 that is more efficient?
+    
  **/
 
 
@@ -24,44 +25,49 @@ public class Latkes
   {
     _stackSize = 0;
     _stack = new String[initCapacity];
-  }// O(?)
+  }// O(1)
 
 
   //means of insertion
   public void push( String s )
   {
-    if (!isFull()) {
-      _stack[_stackSize] = s;
-      _stackSize++;
+    if (isFull()) {
+    System.out.println("Nope, we've reached max capacity.");
+    return;
     }
+    _stack[_stackSize] = s;
+    _stackSize++;
+    System.out.println("Added " + s);
   }// O(?)
 
 
   //means of removal
   public String pop( )
   {
-    if (!isEmpty()) {
-      String r = _stack[_stackSize - 1];
-      _stack[_stackSize - 1] = null;
-      _stackSize--;
-      return r;
+    if (isEmpty()) {
+        return "Nope, we've run out";
     }
-  return "Nope, not valid";
+    String r = _stack[_stackSize - 1];
+    _stack[_stackSize - 1] = null;
+    _stackSize--;
+    System.out.print("Removed ");
+    return r;
+
   }// O(?)
 
 
-  //chk for emptiness
+  //check for emptiness
   public boolean isEmpty()
   {
     return (_stackSize == 0);
-  }// O(?)
+  }// O(1)
 
 
   //chk for fullness
   public boolean isFull()
   {
     return (_stackSize == _stack.length);
-  }// O(?)
+  }// O(1)
 
 
   //main method for testing
