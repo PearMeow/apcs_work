@@ -17,6 +17,7 @@
 
     QCC
     Is it possible to make a pop method that removes at index 0 that is more efficient?
+    Are all of these methods actually O(1)?
 
  **/
 
