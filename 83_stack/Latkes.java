@@ -13,6 +13,7 @@
 
 /***
     DISCO
+    This class is pretty efficient because all the methods are O(1).
 
     QCC
     Is it possible to make a pop method that removes at index 0 that is more efficient?
@@ -44,7 +45,7 @@ public class Latkes
     _stack[_stackSize] = s;
     _stackSize++;
     System.out.println("Added " + s);
-  }// O(?)
+  }// O(1)
 
 
   //means of removal
@@ -59,7 +60,7 @@ public class Latkes
     System.out.print("Removed ");
     return r;
 
-  }// O(?)
+  }// O(1)
 
 
   //check for emptiness
