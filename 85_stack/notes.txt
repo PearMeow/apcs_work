@@ -1,10 +1,19 @@
-Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+Perry Huang, Oscar Breen, Max Schneider
 APCS
-HW85 -- Leon Leonwood Stack
+HW85 -- Leon Leonwood Stack/Stacks/makes the stack work through linked and array lists
 2022-03-30
-time spent: 0.5 hrs
+time spent: 0.2 hrs
 
-DISCO
+DISCO: code is identical except for initializations
+       remains efficient with Big O(1)
+
+QCC: is one better than the other
 
 
-QCC
+Started with Array List and got it to work pretty fast, only some errors with initializatipn
+
+Once we finished that code we copied it over for linked list, changed the names from ArrayList<Integer>
+to LinkedList<Integer>, and found that the exact same code worked
+
+Our main method tests pushing thirteen numbers and then popping them, while peeking,
+the updates each time
