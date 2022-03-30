@@ -79,7 +79,7 @@ public class Latkes
 
   public String peek()
   {
-    return _stack[1];
+      return _stack[_stackSize - 1];
   }
 
   //main method for testing
