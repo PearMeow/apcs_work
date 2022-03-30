@@ -5,7 +5,7 @@
 // time spent: 2.5 hrs
 //
 // DISCO
-// Sometimes the error is in the other file
+// Sometimes the error is in the other file, which can lead to hours of unfruitful debugging
 // Adding print statements when debugging is insanely useful
 //
 // QCC
