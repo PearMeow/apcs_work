@@ -45,7 +45,7 @@ public class Latkes
     }
     _stack[_stackSize] = s;
     _stackSize++;
-    System.out.println("Added " + s);
+    //System.out.println("Added " + s);
   }// O(1)
 
 
@@ -58,7 +58,7 @@ public class Latkes
     String r = _stack[_stackSize - 1];
     _stack[_stackSize - 1] = null;
     _stackSize--;
-    System.out.print("Removed ");
+    //System.out.print("Removed ");
     return r;
 
   }// O(1)
@@ -77,6 +77,10 @@ public class Latkes
     return (_stackSize == _stack.length);
   }// O(1)
 
+  public String peek()
+  {
+    return _stack[1];
+  }
 
   //main method for testing
   public static void main( String[] args )

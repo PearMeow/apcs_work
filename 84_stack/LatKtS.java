@@ -15,15 +15,15 @@ public class LatKtS
    **/
   public static String flip( String s )
   {
-    Latkes() r = new Latkes(s.length());
+    Latkes r = new Latkes(s.length());
     for(int i = 0; i < s.length(); i ++) {
-      r.push(s.substring(i,i+1);)
+      r.push(s.substring(i, i+1));
     }
-    String returned = "";
+    String retStr = "";
     for (int i = 0; i < s.length(); i ++) {
-      returned += r.pop();
+      retStr += r.pop();
     }
-    return returned;
+    return retStr;
   }
 
 
@@ -35,14 +35,15 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
-    Latkes() r = new Latkes(s.length()) 
+    String strVal = "";
+    Latkes r = new Latkes(s.length());
       for(int i = 0; i < s.length(); i ++) {
-        stri = s.substring(i,i+1);
-        if (stri.equals("(") || stri.equals("[") || stri.equals("{")) {
-            r.push(stri);
+        strVal = s.substring(i,i+1);
+        if (strVal.equals("(") || strVal.equals("[") || strVal.equals("{")) {
+          r.push(strVal);
         }
       }
-    
+    return true;
   }
 
 
