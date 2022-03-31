@@ -7,7 +7,7 @@
  *   2. ...
  *   5. Profit!
  *
- * STACK OF CHOICE: ____ by ____
+ * STACK OF CHOICE: ALStack by Pom Pom
  * b/c ...
  **/
 
@@ -22,12 +22,50 @@ public class Scheme
    *           evaluate( "( + 4 3 )" ) -> 7
    *	         evaluate( "( + 4 ( * 2 5 ) 3 )" ) -> 17
    **/
-  public static String evaluate( String expr )
-  {
 
+   //changed to not include parentheses
+  public static String evaluate( ArrayList<String> g )
+  {
+    String s = g.get(0);
+    if (s.equals("+")) {
+      return g.add();
+    }
+
+    if (s.equals("-")) {
+      return g.subtract();
+    }
+
+    if (s.equals("*")) {
+      return g.multiply();
+    }
   }//end evaluate()
 
+  public static int add(ArrayList<String> g) {
+    Iterator u = g.iterator();
+    int p = 0;
+    while (u.hasNext()) {
+      p+=u.next();
+    }
+    return p;
+  }
 
+  public static int subtract(ArrayList<String> g) {
+    Iterator u = g.iterator();
+    int p = 0;
+    while (u.hasNext()) {
+      p+=u.next();
+    }
+    return p;
+  }
+
+  public static int multiply(ArrayList<String> g) {
+    Iterator u = g.iterator();
+    int p = 0;
+    while (u.hasNext()) {
+      p*=u.next();
+    }
+    return p;
+  }
   /***
    * precond:  Assumes top of input stack is a number.
    * postcond: Performs op on nums until closing paren is seen thru peek().
