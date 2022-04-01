@@ -10,12 +10,13 @@
  * STACK OF CHOICE: ALStack by Pom Pom
  * b/c ...
  **/
-
+import java.util.Iterator;
+import java.util.ArrayList;
 public class Scheme
 {
   /***
    * precond:  Assumes expr is a valid Scheme (prefix) expression,
-   *           with whitespace separating all operators, parens, and 
+   *           with whitespace separating all operators, parens, and
    *           integer operands.
    * postcond: Returns the simplified value of the expression, as a String
    * eg,
@@ -24,79 +25,83 @@ public class Scheme
    **/
 
    //changed to not include parentheses
-  public static String evaluate( ArrayList<String> g )
+   public static String evaluate(String expr) {
+     String[] exprArr = expr.split("\\s+");
+    // Iterator<String> exprIt = exprArr.iterator();
+     Stack<String> exprStack = new ALStack<String>();
+     for (String g : exprArr) {
+
+         if (!(g.equals(")"))) {
+           exprStack.push(g);
+         }
+         else {
+           ArrayList<String> empty = new ArrayList<String>();
+           while(!(exprStack.peekTop().equals("("))) {
+            empty.add(exprStack.pop());
+          }
+          exprStack.pop();
+          exprStack.push(math(empty));
+        }
+     }
+
+     return exprStack.pop();
+   }
+
+  public static String math( ArrayList<String> g )
   {
-    String s = g.get(0);
+    String s = g.get(g.size() - 1);
+    System.out.println(g);
     if (s.equals("+")) {
-      return g.add();
+      return adder(g);
     }
 
     if (s.equals("-")) {
-      return g.subtract();
+      return subtracter(g);
     }
 
     if (s.equals("*")) {
-      return g.multiply();
+      return multiplier(g);
     }
+
+    return "Invalid operation";
   }//end evaluate()
 
-  public static int add(ArrayList<String> g) {
-    Iterator u = g.iterator();
-    int p = 0;
-    while (u.hasNext()) {
-      p+=u.next();
+  public static String adder(ArrayList<String> g) {
+    Integer i = 0;
+    for (String s : g) {
+      if (!(s.equals("+"))) {
+        i+=Integer.parseInt(s);
+      }
     }
-    return p;
+    return i.toString();
   }
 
-  public static int subtract(ArrayList<String> g) {
-    Iterator u = g.iterator();
-    int p = 0;
-    while (u.hasNext()) {
-      p+=u.next();
+  public static String subtracter(ArrayList<String> g) {
+    Integer b = Integer.parseInt(g.get(g.size() - 2));
+    for (int i = g.size() - 3 ; i > -1; i--) {
+      String s = g.get(i);
+      b-=Integer.parseInt(s);
     }
-    return p;
+    return b.toString();
   }
 
-  public static int multiply(ArrayList<String> g) {
-    Iterator u = g.iterator();
-    int p = 0;
-    while (u.hasNext()) {
-      p*=u.next();
+  public static String multiplier(ArrayList<String> g) {
+    Integer i = 1;
+    for (String s : g) {
+      if (!(s.equals("*"))) {
+        i*=Integer.parseInt(s);
+      }
     }
-    return p;
+    return i.toString();
   }
-  /***
-   * precond:  Assumes top of input stack is a number.
-   * postcond: Performs op on nums until closing paren is seen thru peek().
-   *           Returns the result of operating on sequence of operands.
-   *           Ops: + is 1, - is 2, * is 3
-   **/
-  public static String unload( int op, Stack<String> numbers )
-  {
 
-  }//end unload()
-
-
-  /*
-  //optional check-to-see-if-its-a-number helper fxn:
-  public static boolean isNumber( String s ) {
-  try {
-  Integer.parseInt(s);
-  return true;
-  }
-  catch( NumberFormatException e ) {
-  return false;
-  }
-  }
-  */
 
 
   //main method for testing
   public static void main( String[] args )
   {
 
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+
       String zoo1 = "( + 4 3 )";
       System.out.println(zoo1);
       System.out.println("zoo1 eval'd: " + evaluate(zoo1) );
@@ -116,6 +121,7 @@ public class Scheme
       System.out.println(zoo4);
       System.out.println("zoo4 eval'd: " + evaluate(zoo4) );
       //...-4
+        /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
   }//main()
 
