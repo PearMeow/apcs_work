@@ -1,3 +1,17 @@
+/*Max Schneider, Oscar Breen, Perry Huang
+APCS
+HW87 -- <The English Do Not Wait In Line for Soup /Queue/Making a queue, remove from front, add to back
+2022-04-03
+time spent: 2
+
+DISCO:
+	-  Nodes are maleable
+	-  assigning and maintaining the values of a first and last makes 
+	   many methods a lot easier
+
+QCC;
+    - Why not Double linked Nodes? 
+*/
 public class NodeQueue<QUASAR> implements Queue<QUASAR> {
   //~~~~~~~~~~~~~~~~~~begin AP subset~~~~~~~~~~~~~~~~~~
   //means of removing an element from collection:
@@ -5,16 +19,29 @@ public class NodeQueue<QUASAR> implements Queue<QUASAR> {
   public Node<QUASAR> first;
   public Node<QUASAR> last;
   public int size;
+  public NodeQueue () {
+    first = new Node<QUASAR>(null,null);
+    last = first;
+    size = 0;
+  }
   public QUASAR dequeue() {
-    if (!(isEmpty())) {
+    if (size > 1) {
       int x = size;
       Node temp = last;
       while (x > 1) {
         temp = temp.cdr;
+        x--;
       }
       first = temp;
+      first.cdr=null;
       size--;
-
+    }else if (size == 1){
+      first = new Node<QUASAR>(null,null);
+      last = first;
+      size=0;
+      return null;
+    } else {
+      return null;
     }
     return first.car;
   }
@@ -41,8 +68,26 @@ public class NodeQueue<QUASAR> implements Queue<QUASAR> {
   public QUASAR peekFront(){
     return first.car;
   }
+  public String toString() {
+    String retval = last.toString();
+    return retval;
+  }
+  public static void main(String[] args) {
+    NodeQueue<String> test = new NodeQueue<String>();
+    System.out.println(test);
+    test.enqueue("a");
+    test.enqueue("b");
+    test.enqueue("c");
+    test.enqueue("d");
+    System.out.println(test);
+    test.dequeue();
+    test.dequeue();
+    test.dequeue();
+    test.dequeue();
+    System.out.println(test);
 
-  public static void main(String[] )
+
+  }
 
 }
 class Node<QUASAR> {
@@ -51,5 +96,11 @@ class Node<QUASAR> {
   public Node(QUASAR carr, Node<QUASAR> cdrr ) {
     car = carr;
     cdr = cdrr;
+  }
+  public String toString () {
+    String retval = "";
+    retval += car;
+    retval+= "--> " + cdr;
+    return retval;
   }
 }
