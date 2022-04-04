@@ -30,7 +30,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   }
 
 
-  public void enqueue( T enQVal )
+  public void enqueue( SWASHBUCKLE enQVal )
   {
   if ( isEmpty() ) {
       _front = _end = new LLNode<SWASHBUCKLE>( enQVal, null );
@@ -46,7 +46,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
 
   // remove and return thing at front of queue
   // assume _queue ! empty
-  public T dequeue()
+  public SWASHBUCKLE dequeue()
   {
     SWASHBUCKLE retVal = _front.getCargo();
     _front = _front.getNext();
@@ -60,7 +60,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   }//O(?)
 
 
-  public T peekFront()
+  public SWASHBUCKLE peekFront()
   {
     return _front.getCargo();
   }//O(?)
@@ -73,8 +73,8 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
    **/
   public void sample ()
   {
-    LLNode<SWASHBUCKLE> temp = last;
-    LLNode<SWASHBUCKLE> prev = last;
+    LLNode<SWASHBUCKLE> temp = _end;
+    LLNode<SWASHBUCKLE> prev = _end;
     for (int i = 0; i < size; i ++) {
       int t = (int)(Math.random() * 3);
       if (t == 0 && i!=0) {
@@ -84,11 +84,11 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
       }
       else if(t == 1 && i!=0) {
         prev.setNext(temp.getNext());
-        last.setNext(temp.getCargo());
-        last = last.getNext();
+        _end.setNext(temp.getCargo());
+        _end = _end.getNext();
         temp=prev.getNext();
       } 
-      else ) {
+      else {
         temp=temp.getNext();
         prev=prev.getNext();
       } 

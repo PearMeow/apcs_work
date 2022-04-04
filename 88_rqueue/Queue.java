@@ -4,22 +4,22 @@
  * (Local version, to override built-in Java implementation.)
  **/
 
-public interface Queue<QUASAR>
+public interface Queue<SWASHBUCKLE>
 {
   //~~~~~~~~~~~~~~~~~~begin AP subset~~~~~~~~~~~~~~~~~~
   //means of removing an element from collection:
   //Dequeues and returns the first element of the queue.
-  public QUASAR dequeue();
+  public SWASHBUCKLE dequeue();
 
   //means of adding an element to collection:
   //Enqueue an element onto the back of this queue.
-  public void enqueue( QUASAR x );
+  public void enqueue( SWASHBUCKLE x );
 
   //Returns true if this queue is empty, otherwise returns false.
   public boolean isEmpty();
 
   //Returns the first element of the queue without dequeuing it.
-  public QUASAR peekFront();
+  public SWASHBUCKLE peekFront();
   //~~~~~~~~~~~~~~~~~~~end AP subset~~~~~~~~~~~~~~~~~~~
 
 }//end interface Queue
