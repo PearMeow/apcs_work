@@ -10,22 +10,6 @@ DISCO
 
 QCC
 
-Activity 1:
-1. Youtube, GMail
-2. Username, password, email
-3. Separated or limited. You have to know the boundaries between data in a file.
-4. The heading of the column usually says the data type.
-5. Video games and sleeping.
-6. How do videogames affect your ability to concentrate in class? How does sleep affect your ability to play vidoegames?
-7. kaggle.com: Sleep Study, Sleep data, searched "sleep"
-8. Sleep Study: 573, Sleep data: 887. More records lead to more accurate information.
-9. The advertisements on a site change for every person. This is good because people get to see what they want to buy.
-10. Survey: they surveyed random people.
-11. Yes, like collecting data for a sickness because that is important for keeping people safe.
-
-Activity 2
-1. Cereal type
-2. 
 
 <TNPG>'s CSV FLOW:
 <insert your description of your tools and workflow in creating, editing CSV files>
