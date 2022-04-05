@@ -1,3 +1,5 @@
+import javax.swing.plaf.synth.SynthStyleFactory;
+
 // Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
 // APCS
 // HW88 -- BPC Kiddies Do Not Wait in Line Either
@@ -47,7 +49,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   if ( isEmpty() ) {
       _front = _end = new LLNode<SWASHBUCKLE>( enQVal, null );
     }
-    else {
+  else {
       _end.setNext( new LLNode<SWASHBUCKLE>( enQVal, null ) );
       _end = _end.getNext();
     }
@@ -63,7 +65,6 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     SWASHBUCKLE retVal;
     LLNode<SWASHBUCKLE> temp = _front;
     int randVal = (int) (Math.random() * _size);
-    System.out.println(randVal);
 
     if (randVal == 0) {
       retVal = _front.getCargo();
@@ -72,7 +73,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
       return retVal;
     }
     if (randVal == _size) {
-      for (int i = 0; i < randVal - 1; i++) {
+      for (int i = 0; i < _size; i++) {
         temp = temp.getNext();
       }
       _end = temp;
@@ -82,7 +83,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
       return retVal;
     }
 
-    for (int i = 0; i < randVal - 1; i++) {
+    for (int i = 0; i < randVal - 2; i++) {
       temp = temp.getNext();
     }
     retVal = temp.getNext().getCargo();
@@ -100,21 +101,17 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   }//O(?)
 
 
-  /***
+/***
    * void sample() -- a means of "shuffling" the queue
    * Algo:
    *   < YOUR SUCCINCT SUMMARY HERE >
    **/
   public void sample()
   {
-    LLNode<SWASHBUCKLE> temp = _end;
-    LLNode<SWASHBUCKLE> prev = _end;
     for (int i = 0; i < _size; i ++) {
-      int t = (int)(Math.random() * 3);
-     
+      enqueue(dequeue());
     }
   }//O(?)
-
 
   public boolean isEmpty()
   {
@@ -154,6 +151,10 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println("\nnow testing toString()..."); 
     System.out.println( PirateQueue ); //for testing toString()...
 
+    System.out.println("\nnow testing sample...");
+    PirateQueue.sample();
+    System.out.println( PirateQueue );
+
     System.out.println("\nnow dequeuing..."); 
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
@@ -161,6 +162,10 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
+
+    System.out.println("\nnow testing sample...");
+    PirateQueue.sample();
+    System.out.println( PirateQueue );
 
       /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
     System.out.println("\nnow dequeuing fr empty queue...\n" +
