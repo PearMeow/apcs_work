@@ -75,7 +75,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   {
     LLNode<SWASHBUCKLE> temp = _end;
     LLNode<SWASHBUCKLE> prev = _end;
-    for (int i = 0; i < size; i ++) {
+    for (int i = 0; i < _size; i ++) {
       int t = (int)(Math.random() * 3);
       if (t == 0 && i!=0) {
         prev.setNext(temp.getNext());
@@ -84,7 +84,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
       }
       else if(t == 1 && i!=0) {
         prev.setNext(temp.getNext());
-        _end.setNext(temp.getCargo());
+        _end.setNext(temp);
         _end = _end.getNext();
         temp=prev.getNext();
       } 
