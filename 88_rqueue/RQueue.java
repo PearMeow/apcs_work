@@ -4,7 +4,7 @@ import javax.swing.plaf.synth.SynthStyleFactory;
 // APCS
 // HW88 -- BPC Kiddies Do Not Wait in Line Either
 // 2022-04-04
-// time spent: 1.5 hrs
+// time spent: 2 hrs
 // DISCO
 // Instead of trying to use setNext we can just dequeue and enqueue repeatedly to sample.
 // Typecasting int should be done after putting parenthesis on the expression so that you don't accidentally make Math.random() into 0 every time.
