@@ -160,10 +160,6 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
 
-    System.out.println("\nnow testing sample...");
-    PirateQueue.sample();
-    System.out.println( PirateQueue );
-
       /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
     System.out.println("\nnow dequeuing fr empty queue...\n" +
                        "(expect NPE)\n"); 
