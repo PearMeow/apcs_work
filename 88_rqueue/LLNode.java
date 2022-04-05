@@ -1,62 +1,39 @@
-/***
- * class LLNode
- * Implements a node, for use in lists and other container classes.
- * Stores its data as a String
- **/
-
-public class LLNode<SWASHBUCKLE>
-{
-  //instance vars
-  private SWASHBUCKLE car;
-  private LLNode<SWASHBUCKLE> cdr;
-
-
-  // constructor
-  public LLNode( SWASHBUCKLE value, LLNode<SWASHBUCKLE> next )
+public class LLNode<T>
   {
-    car = value;
-    cdr = next;
-  }
+    //instance vars
+    private T _cargo;    //cargo may only be of type T
+    private LLNode<T> _nextNode; //pointer to next LLNode<T>
 
-
-  //--------------v  ACCESSORS  v--------------
-  public SWASHBUCKLE getCargo()
-  {
-    return car;
-  }
-
-  public LLNode<SWASHBUCKLE> getNext()
-  {
-    return cdr;
-  }
-  //--------------^  ACCESSORS  ^--------------
-
-
-  //--------------v  MUTATORS  v--------------
-  public SWASHBUCKLE setCargo( SWASHBUCKLE newCargo )
-  {
-    SWASHBUCKLE oldCargo = car;
-    car = newCargo;
-    return oldCargo;
-  }
-
-  public LLNode<SWASHBUCKLE> setNext( LLNode<SWASHBUCKLE> newNext )
-  {
-    LLNode<SWASHBUCKLE> oldNext = cdr;
-    cdr = newNext;
-    return oldNext;
-  }
-  //--------------^  MUTATORS  ^--------------
-
-
-  // override inherited toString
-  public String toString()
-  {
-    if (cdr == null) {
-      return car.toString();
-    } else {
-      return car + " > " +  cdr.toString();
+    // constructor -- initializes instance vars
+    public LLNode( T value, LLNode<T> next ) {
+      _cargo = value;
+      _nextNode = next;
     }
-  }
 
-}//end class LLNode
+
+    //--------------v  ACCESSORS  v--------------
+    public T getCargo() { return _cargo; }
+
+    public LLNode<T> getNext() { return _nextNode; }
+    //--------------^  ACCESSORS  ^--------------
+
+
+    //--------------v  MUTATORS  v--------------
+    public T setCargo( T newCargo ) {
+      T foo = getCargo();
+      _cargo = newCargo;
+      return foo;
+    }
+
+    public LLNode<T> setNext( LLNode<T> newNext ) {
+      LLNode<T> foo = getNext();
+      _nextNode = newNext;
+      return foo;
+    }
+    //--------------^  MUTATORS  ^--------------
+
+
+    // override inherited toString
+    public String toString() { return _cargo.toString(); }
+
+  }//end class LLNode
