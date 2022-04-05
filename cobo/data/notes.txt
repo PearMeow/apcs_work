@@ -1,0 +1,26 @@
+Team LPL: Lawrence Joa, Perry Huang, Lior Polischouk
+APCS
+LAB08 -- America's Next Top Data Scientist
+2022-04-05
+time spent: 9999 hrs
+
+
+DISCO
+
+
+QCC
+
+Activity 1:
+1. Youtube, GMail
+2. Username, password, email
+3. Separated or limited. You have to know the boundaries between data in a file.
+4. The heading of the column usually says the data type.
+5. Video games and sleeping.
+6. How do videogames affect your ability to concentrate in class? How does sleep affect your ability to play vidoegames?
+
+<TNPG>'s CSV FLOW:
+<insert your description of your tools and workflow in creating, editing CSV files>
+
+
+TRUBZ
+<this lab involves using tools that are likely to introduce hiccups; log any troubleshooting issues here>
