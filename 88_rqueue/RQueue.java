@@ -55,7 +55,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     }
     _size++;
     System.out.println("enqueued " + enQVal);
-  }//O(?)
+  }//O(1)
 
 
   // remove and return random thing
