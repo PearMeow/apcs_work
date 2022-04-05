@@ -1,3 +1,5 @@
+import javax.swing.plaf.synth.SynthStyleFactory;
+
 /***
  * class RQueue
  * SKELETON
@@ -50,20 +52,24 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   {
     SWASHBUCKLE retVal;
     LLNode<SWASHBUCKLE> temp = _front;
-    int randVal = (int)Math.random() * _size;
+    int randVal = (int) (Math.random() * _size);
+    System.out.println(randVal);
 
     if (randVal == 0) {
       retVal = _front.getCargo();
       _front = _front.getNext();
+      _size--;
       return retVal;
     }
-    if (randVal == _size - 1) {
-      for (int i = 0; i < randVal; i++) {
+    if (randVal == _size) {
+      for (int i = 0; i < randVal - 1; i++) {
         temp = temp.getNext();
       }
       _end = temp;
       retVal = _end.getCargo();
       _end.setCargo(null);
+      _size--;
+      return retVal;
     }
 
     for (int i = 0; i < randVal - 1; i++) {
@@ -145,7 +151,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
-    
+
       /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
     System.out.println("\nnow dequeuing fr empty queue...\n" +
                        "(expect NPE)\n"); 
