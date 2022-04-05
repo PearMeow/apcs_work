@@ -48,8 +48,13 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   // assume _queue ! empty
   public SWASHBUCKLE dequeue()
   {
-    SWASHBUCKLE retVal = _front.getCargo();
-    _front = _front.getNext();
+    int randVal = (int)Math.random() * _size;
+    LLNode<SWASHBUCKLE> temp = _front;
+    for (int i = 0; i < randVal - 1; i++) {
+      temp = temp.getNext();
+    }
+    SWASHBUCKLE retVal = temp.getNext().getCargo();
+    temp.setNext(temp.getNext().getNext());
 
     if ( _front == null ) //just moved past last node
       _end = null;      //update _end to reflect emptiness
@@ -71,7 +76,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
    * Algo:
    *   < YOUR SUCCINCT SUMMARY HERE >
    **/
-  public void sample ()
+  public void sample()
   {
     LLNode<SWASHBUCKLE> temp = _end;
     LLNode<SWASHBUCKLE> prev = _end;
@@ -114,47 +119,6 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     retStr += " :: END";
     return retStr;
   }//end toString()
-
-public class LLNode<T>
-  {
-    //instance vars
-    private T _cargo;    //cargo may only be of type T
-    private LLNode<T> _nextNode; //pointer to next LLNode<T>
-
-    // constructor -- initializes instance vars
-    public LLNode( T value, LLNode<T> next ) {
-      _cargo = value;
-      _nextNode = next;
-    }
-
-
-    //--------------v  ACCESSORS  v--------------
-    public T getCargo() { return _cargo; }
-
-    public LLNode<T> getNext() { return _nextNode; }
-    //--------------^  ACCESSORS  ^--------------
-
-
-    //--------------v  MUTATORS  v--------------
-    public T setCargo( T newCargo ) {
-      T foo = getCargo();
-      _cargo = newCargo;
-      return foo;
-    }
-
-    public LLNode<T> setNext( LLNode<T> newNext ) {
-      LLNode<T> foo = getNext();
-      _nextNode = newNext;
-      return foo;
-    }
-    //--------------^  MUTATORS  ^--------------
-
-
-    // override inherited toString
-    public String toString() { return _cargo.toString(); }
-
-  }//end class LLNode
-
 
   //main method for testing
   public static void main( String[] args )
