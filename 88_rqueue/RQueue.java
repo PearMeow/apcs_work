@@ -92,13 +92,13 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     _size--;
 
     return retVal;
-  }//O(?)
+  }//O(n)
 
 
   public SWASHBUCKLE peekFront()
   {
     return _front.getCargo();
-  }//O(?)
+  }//O(1)
 
 
 /***
@@ -111,12 +111,12 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     for (int i = 0; i < _size; i ++) {
       enqueue(dequeue());
     }
-  }//O(?)
+  }//O(n)
 
   public boolean isEmpty()
   {
     return _front == null;
-  } //O(?)
+  } //O(1)
 
 
   // print each node, separated by spaces
@@ -135,9 +135,6 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   //main method for testing
   public static void main( String[] args )
   {
-
-
-    
     Queue<String> PirateQueue = new RQueue<String>();
 
     System.out.println("\nnow enqueuing..."); 
