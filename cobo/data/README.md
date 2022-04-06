@@ -19,7 +19,12 @@ Activity 1:
 
 Activity 2
 1. Cereal type
-No question so didn't do
+
+Activity 3
+1. The temperature at Atlanta, Hartsfield - Jackson Atlanta International Airport, GA is 67.0F
+2. KEET
+The temperature at Alabaster, Shelby County Airport, AL is 74.0F
+
 
 data sets:
 
@@ -32,7 +37,7 @@ To make a JAR available to runtime environment (JRE)...
 
 ```
 $ javac -classpath .:sinbad.jar -d . Driver.java
-$ java -classpath.:sinbad.jar Driver
+$ java -classpath .:sinbad.jar Driver
 ```
 
 411 on sinbad 
