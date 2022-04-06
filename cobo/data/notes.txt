@@ -2,14 +2,14 @@ Team LPL: Lawrence Joa, Perry Huang, Lior Polischouk
 APCS
 LAB08 -- America's Next Top Data Scientist
 2022-04-05
-time spent: 9999 hrs
+time spent: 1.5 hrs
 
 
 DISCO
-
+Using sinbad.jar is pretty annoying and creates errors and weirdness when compiling and running 
 
 QCC
-
+How do we fix the package core.data does not exist error?
 
 <TNPG>'s CSV FLOW:
 <insert your description of your tools and workflow in creating, editing CSV files>
