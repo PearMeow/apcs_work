@@ -36,15 +36,28 @@ public class ALQueue<T> implements Queue<T> {
     public boolean isEmpty () {
         return (_tail == _head);
     }
+
     public T peekFront() {
         return _data.get(_head);
     }
+
+    public String toString() {
+        ArrayList<T> _temp = new ArrayList<T>();
+        _temp = _data; 
+        String retVal = "";
+        for (int i = 0; i < _head; i++) {
+            retVal += _temp.get(i) + "\n";
+        }
+        return retVal;
+    }
+
+
     public static void main(String[] args) {
         ALQueue<Integer> max = new ALQueue<Integer>();
         max.enqueue(1);
-        max.enqueue(1);
-        max.enqueue(1);
-        max.enqueue(1);
+        max.enqueue(2);
+        max.enqueue(3);
+        max.enqueue(4);
         System.out.println(max);
     }
 }
