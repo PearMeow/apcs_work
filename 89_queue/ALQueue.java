@@ -1,5 +1,6 @@
-public class ALQ<t> implements Queue<t> {
-    private ArrayList<t> _data = new ArrayList<t>;
+import java.util.ArrayList;
+public class ALQueue<t> implements Queue<t> {
+    private ArrayList<t> _data = new ArrayList<t>();
     private int _size = 0;
     private int _head = 0;
     private int _tail = 0;
@@ -9,26 +10,28 @@ public class ALQ<t> implements Queue<t> {
         _head+=1;
     }
     public t dequeue() {
+        t retVal = _data.get(_tail);
         _tail+=1;
         _size-=1;
+        return retVal;
     }
 
     public String toString () {
-        String retval = "";
-        for(int i = tail; i < _head;i++) {
-            retVal+= _data.get(i);
-            retVal+=", "
+        String retVal = "";
+        for(int i = _tail; i < _head;i++) {
+            retVal += _data.get(i);
+            retVal+=", ";
         } 
-        return retval;
+        return retVal;
     }
     public boolean isEmpty () {
-        return (tail == head);
+        return (_tail == _head);
     }
     public t peekFront() {
-        return _data.get(head);
+        return _data.get(_head);
     }
     public static void main(String[] args) {
-        ALQ<int> max = new ALQ<int>();
+        ALQueue<Integer> max = new ALQueue<Integer>();
         max.enqueue(1);
         max.enqueue(1);
         max.enqueue(1);
