@@ -1,33 +1,42 @@
+/*
+
+Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+APCS
+HW89 -- Queue Two Ways
+2022-04-11
+time spent: 0.6 hrs
+
+DISCO
+Linked Lists are more versatile than ArrayLists.
+ArrayLists use denser code.
+
+QCC
+Is _size a necessary variable?
+
+*/
+
 import java.util.ArrayList;
-public class ALQueue<t> implements Queue<t> {
-    private ArrayList<t> _data = new ArrayList<t>();
+public class ALQueue<T> implements Queue<T> {
+    private ArrayList<T> _data = new ArrayList<T>();
     private int _size = 0;
     private int _head = 0;
     private int _tail = 0;
-    public void enqueue(t newdata) {
+    public void enqueue(T newdata) {
         _data.add(newdata);
         _size +=1;
         _head+=1;
     }
-    public t dequeue() {
-        t retVal = _data.get(_tail);
+    public T dequeue() {
+        T retVal = _data.get(_tail);
         _tail+=1;
         _size-=1;
         return retVal;
     }
 
-    public String toString () {
-        String retVal = "";
-        for(int i = _tail; i < _head;i++) {
-            retVal += _data.get(i);
-            retVal+=", ";
-        } 
-        return retVal;
-    }
     public boolean isEmpty () {
         return (_tail == _head);
     }
-    public t peekFront() {
+    public T peekFront() {
         return _data.get(_head);
     }
     public static void main(String[] args) {
