@@ -15,7 +15,18 @@ public class QQCC<T> implements Deque<T>
     }
 
     public T pollFirst() {
-        
+        T retVal = _data.get(_first);
+        _first += 1;
+        _size -= 1;
+        return retVal;
     }
+
+    public T pollLast() {
+        T retVal = _data.get(_last);
+        _last -= 1;
+        _size -= 1;
+        return retVal;
+    }
+
 
 }
