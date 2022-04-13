@@ -1,10 +1,10 @@
-Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
-APCS
-HW91 -- Deque the Halls
-2022-04-13
-time spent: 9999 hrs
+Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen <br>
+APCS                                                  <br>
+HW91 -- Deque the Halls                               <br>
+2022-04-13                                            <br>
+time spent: 9999 hrs                                  <br>
 
-To Do:
+To Do:                                      <br>
 // public boolean offerFirst(T newVal);     <br>
 // public boolean offerLast(T newVal);      <br>
 // public boolean remove(T o);              <br>
