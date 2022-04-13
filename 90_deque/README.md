@@ -5,8 +5,7 @@ HW91 -- Deque the Halls                               <br>
 time spent: 9999 hrs                                  <br>
 
 To Do:                                      <br>
-// public boolean offerFirst(T newVal);     <br>
-// public boolean offerLast(T newVal);      <br>
+
 // public boolean remove(T o);              <br>
 // public boolean removeLastOccurence(T o); <br>
 
@@ -22,3 +21,5 @@ public boolean contains(T findVal); EZ      <br>
 public Iterator<T> iterator(); Medium       <br>
 public boolean addAll (Collection<T> c); EZ <br>
 public Iterator<T> descendingIterator(); EZ <br>
+public boolean offerFirst(T newVal); EZ     <br>
+public boolean offerLast(T newVal); EZ     <br>
