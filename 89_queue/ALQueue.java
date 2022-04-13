@@ -17,15 +17,18 @@ Is _size a necessary variable?
 
 import java.util.ArrayList;
 public class ALQueue<T> implements Queue<T> {
+
     private ArrayList<T> _data = new ArrayList<T>();
     private int _size = 0;
     private int _head = 0;
     private int _tail = 0;
+
     public void enqueue(T newdata) {
         _data.add(newdata);
         _size +=1;
         _head+=1;
     }
+    
     public T dequeue() {
         T retVal = _data.get(_tail);
         _tail+=1;

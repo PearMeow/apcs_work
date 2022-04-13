@@ -3,20 +3,21 @@ public class QQCC<T> implements Deque<T> {
     private ArrayList<T> _data;
     private int _first;
     private int _last;
+    private int _size;
 
-
-    public QQCC(int size) {
+    public QQCC (int size) {
 
         _data = new ArrayList<T>(size);
         _first = 0;
         _last = 0;
-
+        _size = size;
+        
     }
 
     public void addFirst(T newVal) {
-        ArrayList<T> _temp = new ArrayList<T>(_data.size());
+        ArrayList<T> _temp = new ArrayList<T>(_size);
         _temp.add(newVal);
-        for (int i = _first; i < _last + 1; i++) {
+        for (int i = _first; i < _last; i++) {
             _temp.add(_data.get(i));
         }
         _data = _temp;
@@ -62,4 +63,28 @@ public class QQCC<T> implements Deque<T> {
         }
         return false;
     }
+
+    public String toString() {
+        ArrayList<T> _temp = new ArrayList<T>();
+        _temp = _data; 
+        String retVal = "";
+        for (int i = 0; i < _last; i++) {
+            retVal += _temp.get(i);
+        }
+        return retVal;
+    }
+
+    public static void main(String[] args) {
+
+        QQCC<Integer> perry = new QQCC<Integer>(6);
+        perry.addFirst(1);
+        perry.addFirst(2);
+        perry.addFirst(3);
+        perry.addFirst(4);
+        perry.addFirst(5);
+        perry.addFirst(6);
+        perry.addFirst(7);
+        System.out.println(perry); //7654321
+    }
+
 }
