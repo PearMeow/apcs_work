@@ -1,8 +1,14 @@
 Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
 APCS
-HW89 -- Swabbing the Deque
-2022-04-12
-time spent: 1.5 hrs
+HW91 -- Deque the Halls
+2022-04-13
+time spent: 9999 hrs
+
+To Do:
+// public boolean offerFirst(T newVal); 
+// public boolean offerLast(T newVal); 
+// public boolean remove(T o); 
+// public boolean removeLastOccurence(T o); 
 
 ArrayList:
 public void addFirst(T newVal); Hard
@@ -22,11 +28,7 @@ public T pollFirst(); EZ
 public T pollLast(); EZ
 public T peekFirst(); EZ
 public T peekLast(); EZ
-public boolean offerFirst(T newVal); EZ
-public boolean offerLast(T newVal); EZ
 public boolean contains(T findVal); EZ
-// public boolean remove(T o); Undone
 public Iterator<T> iterator(); Some issues, but EZ
 public boolean addAll (Collection<T> c); EZ
 public Iterator<T> descendingIterator(); EZ
-// public boolean removeLastOccurence(T o); Undone

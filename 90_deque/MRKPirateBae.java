@@ -1,6 +1,13 @@
+/*
+Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+APCS
+HW91 -- Deque the Halls
+2022-04-13
+time spent: 9999 hrs
+*/
 import java.util.Iterator;
 import java.util.Stack;
-public class LewisHamilton {
+public class MRKPirateBae {
     public static void main(String[] args) {
 
         QQCC<Integer> Verstappen = new QQCC<Integer>();
