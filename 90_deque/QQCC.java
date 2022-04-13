@@ -83,13 +83,7 @@ public class QQCC<T> implements Deque<T> {
     }
 
     public String toString() {
-        ArrayList<T> _temp = new ArrayList<T>();
-        _temp = _data; 
-        String retVal = "";
-        for (int i = 0; i < _last; i++) {
-            retVal += _temp.get(i);
-        }
-        return retVal;
+        return _data.toString();
     }
 
     public static void main(String[] args) {
