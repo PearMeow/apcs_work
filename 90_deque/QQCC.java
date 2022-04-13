@@ -28,5 +28,12 @@ public class QQCC<T> implements Deque<T>
         return retVal;
     }
 
+    public T peekFirst() {
+        return _first;
+    }
+
+    public T peekLast() {
+        return _last;
+    }
 
 }
