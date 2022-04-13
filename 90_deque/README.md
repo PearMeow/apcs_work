@@ -5,30 +5,30 @@ HW91 -- Deque the Halls
 time spent: 9999 hrs
 
 To Do:
-// public boolean offerFirst(T newVal); 
-// public boolean offerLast(T newVal); 
-// public boolean remove(T o); 
-// public boolean removeLastOccurence(T o); 
+// public boolean offerFirst(T newVal);     <br>
+// public boolean offerLast(T newVal);      <br>
+// public boolean remove(T o);              <br>
+// public boolean removeLastOccurence(T o); <br>
 
 ArrayList:
-public void addFirst(T newVal); Hard
-public void addLast(T newVal); EZ
-public T pollFirst(); EZ
-public T pollLast(); EZ
-public T peekFirst(); EZ
-public T peekLast(); EZ
-public boolean offerFirst(T newVal); EZ
-public boolean offerLast(T newVal); EZ
+public void addFirst(T newVal); Hard        <br>
+public void addLast(T newVal); EZ           <br>
+public T pollFirst(); EZ                    <br>
+public T pollLast(); EZ                     <br>
+public T peekFirst(); EZ                    <br>
+public T peekLast(); EZ                     <br>
+public boolean offerFirst(T newVal); EZ     <br>
+public boolean offerLast(T newVal); EZ      <br>
 
-LinkedList - ALL EZ
+LinkedList - ALL EZ                         <br>
 
-public void addFirst(T newVal); EZ
-public void addLast(T newVal); EZ
-public T pollFirst(); EZ
-public T pollLast(); EZ
-public T peekFirst(); EZ
-public T peekLast(); EZ
-public boolean contains(T findVal); EZ
-public Iterator<T> iterator(); Some issues, but EZ
-public boolean addAll (Collection<T> c); EZ
-public Iterator<T> descendingIterator(); EZ
+public void addFirst(T newVal); EZ          <br>
+public void addLast(T newVal); EZ           <br>
+public T pollFirst(); EZ                    <br>
+public T pollLast(); EZ                     <br>
+public T peekFirst(); EZ                    <br>
+public T peekLast(); EZ                     <br>
+public boolean contains(T findVal); EZ      <br>
+public Iterator<T> iterator(); Medium       <br>
+public boolean addAll (Collection<T> c); EZ <br>
+public Iterator<T> descendingIterator(); EZ <br>
