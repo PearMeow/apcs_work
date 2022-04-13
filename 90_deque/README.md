@@ -10,17 +10,7 @@ To Do:                                      <br>
 // public boolean remove(T o);              <br>
 // public boolean removeLastOccurence(T o); <br>
 
-ArrayList:
-public void addFirst(T newVal); Hard        <br>
-public void addLast(T newVal); EZ           <br>
-public T pollFirst(); EZ                    <br>
-public T pollLast(); EZ                     <br>
-public T peekFirst(); EZ                    <br>
-public T peekLast(); EZ                     <br>
-public boolean offerFirst(T newVal); EZ     <br>
-public boolean offerLast(T newVal); EZ      <br>
-
-LinkedList - ALL EZ                         <br>
+LinkedList - Pretty EZ                      <br>
 
 public void addFirst(T newVal); EZ          <br>
 public void addLast(T newVal); EZ           <br>
