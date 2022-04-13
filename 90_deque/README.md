@@ -9,7 +9,7 @@ To Do:                                      <br>
 // public boolean remove(T o);              <br>
 // public boolean removeLastOccurence(T o); <br>
 
-LinkedList - Pretty EZ                      <br>
+LinkedList - Mostly EZ                      <br>
 
 public void addFirst(T newVal); EZ          <br>
 public void addLast(T newVal); EZ           <br>
@@ -22,4 +22,4 @@ public Iterator<T> iterator(); Medium       <br>
 public boolean addAll (Collection<T> c); EZ <br>
 public Iterator<T> descendingIterator(); EZ <br>
 public boolean offerFirst(T newVal); EZ     <br>
-public boolean offerLast(T newVal); EZ     <br>
+public boolean offerLast(T newVal); EZ      <br>
