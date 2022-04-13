@@ -1,93 +1,73 @@
-import java.util.ArrayList;
+/*
+Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+APCS
+HW89 -- Swabbing the Deque
+2022-04-12
+time spent: 1.5 hrs
+*/
+import java.util.Iterator;
+import java.util.Collection;
+import java.util.LinkedList;
 public class QQCC<T> implements Deque<T> {
-    private ArrayList<T> _data;
-    private int _first;
-    private int _last;
-    private int _size;
+    private LinkedList<T> _data;
+    public QQCC () {
 
-    public QQCC (int size) {
+        _data = new LinkedList<T>();
 
-        _data = new ArrayList<T>(size);
-        _first = 0;
-        _last = 0;
-        _size = size;
-        
     }
 
     public void addFirst(T newVal) {
-        if (_last - _first == _size) {
-            throw new IllegalStateException();
-        }
-        ArrayList<T> _temp = new ArrayList<T>(_size);
-        _temp.add(newVal);
-        for (int i = _first; i < _last; i++) {
-            _temp.add(_data.get(i));
-        }
-        _data = _temp;
-        _last++;
+        _data.addFirst(newVal);
     }
     public void addLast(T newVal) {
-        if (_last - _first == _size) {
-            throw new IllegalStateException();
-        }
-        _data.add(newVal);
-        _last++;
+        _data.addLast(newVal);
     }
 
     public T pollFirst() {
-        if (_first == _last) {
-            return null;
-        }
-        T retVal = _data.get(_first);
-        _first += 1;
-        return retVal;
+        return _data.pollFirst();
     }
 
     public T pollLast() {
-        if (_first == _last) {
-            return null;
-        }
-        T retVal = _data.get(_last-1);
-        _last -= 1;
-        return retVal;
+        return _data.pollLast();
     }
 
     public T peekFirst() {
-        if (_first == _last) {
-            return null;
-        }
-        return _data.get(_first);
+        return _data.peekFirst();
     }
 
     public T peekLast() {
-        if (_first == _last) {
-            return null;
-        }
-        return _data.get(_last - 1);
+        return _data.peekLast();
     }
 
     public boolean offerFirst(T newVal) {
-        if (_last != _data.size()) {
-            addFirst(newVal);
-            return true;
-        }
-        return false;
+        return _data.offerFirst(newVal);
     }
 
     public boolean offerLast(T newVal) {
-        if (_last != _data.size()) {
-            addLast(newVal);
-            return true;
-        }
-        return false;
+        return _data.offerLast(newVal);
     }
 
+    public boolean contains(T findVal) {
+      return _data.contains(findVal);
+    }
+
+    public Iterator<T> iterator() {
+        return _data.iterator();
+    }
+    public boolean addAll (Collection<T> c){
+        return _data.addAll(c);
+    }
+    public Iterator<T> descendingIterator(){
+        return _data.descendingIterator();
+    }
+    
     public String toString() {
         return _data.toString();
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        /*
         QQCC<Integer> perry = new QQCC<Integer>(9);
         perry.addFirst(1);
         perry.addFirst(2);
@@ -97,7 +77,9 @@ public class QQCC<T> implements Deque<T> {
         perry.addFirst(6);
         perry.addFirst(7);
 
-        System.out.println(perry); //654321
+        System.out.println(perry); //7654321
+        System.out.println(perry.contains(7)); //true
+        System.out.println(perry.contains(11)); // false
 
 
 	    perry.addLast(8);
@@ -110,11 +92,11 @@ public class QQCC<T> implements Deque<T> {
         System.out.println(perry.peekLast()); //1
         System.out.println(perry.peekFirst()); //6
 
-	    perry.pollFirst(); //6
-    	perry.pollFirst(); //5
-	    perry.pollFirst(); //4
-    	perry.pollFirst(); //3
-	    perry.pollFirst(); //2 
+	    System.out.println(perry.pollFirst()); //6
+    	System.out.println(perry.pollFirst()); //5
+	    System.out.println(perry.pollFirst()); //4
+    	System.out.println(perry.pollFirst()); //3
+	    System.out.println(perry.pollFirst()); //2
 
         System.out.println(perry.peekLast()); //1
         System.out.println(perry.peekFirst()); //1
@@ -123,7 +105,7 @@ public class QQCC<T> implements Deque<T> {
 
     	System.out.println(perry.peekLast()); //null
         System.out.println(perry.peekFirst()); //null
-
+        */
 
     }
 
