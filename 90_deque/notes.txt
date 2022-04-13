@@ -5,5 +5,9 @@ HW89 -- Swabbing the Deque
 time spent: 1.5 hrs
 
 DISCO
+To throw an exception, you must have throw and the exception name with parentheses as if it were a method.
+I am bad at reading the assignments page closely.
 
 QCC
+Do we need to import java.util.ArrayList in the interface?
+Do we need toString in the interface?
