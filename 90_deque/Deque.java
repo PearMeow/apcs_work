@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public interface Deque<T> 
 {
 
@@ -7,7 +8,7 @@ public interface Deque<T>
     public T pollLast();
     public T peekFirst();
     public T peekLast();
-    public boolean offerFirst();
-    public boolean offerLast();
+    public boolean offerFirst(T newVal);
+    public boolean offerLast(T newVal);
     
 }
