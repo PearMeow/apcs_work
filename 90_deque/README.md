@@ -2,12 +2,10 @@ Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen <br>
 APCS                                                  <br>
 HW91 -- Deque the Halls                               <br>
 2022-04-13                                            <br>
-time spent: 9999 hrs                                  <br>
+time spent: 1 hr                                      <br>
 
 To Do:                                      <br>
-
-// public boolean remove(T o);              <br>
-// public boolean removeLastOccurence(T o); <br>
+All done!                                   <br>
 
 LinkedList - Mostly EZ                      <br>
 
@@ -23,3 +21,5 @@ public boolean addAll (Collection<T> c); EZ <br>
 public Iterator<T> descendingIterator(); EZ <br>
 public boolean offerFirst(T newVal); EZ     <br>
 public boolean offerLast(T newVal); EZ      <br>
+public boolean remove(T o);                 <br>
+public boolean removeLastOccurence(T o);    <br>
