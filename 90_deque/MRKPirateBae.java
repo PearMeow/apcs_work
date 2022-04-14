@@ -10,26 +10,77 @@ import java.util.Stack;
 public class MRKPirateBae {
     public static void main(String[] args) {
 
+        // Testing addFirst, addLast, pollFirst, pollLast, peekFirst, and peekLast
+        
+        QQCC<Integer> perry = new QQCC<Integer>();
+        perry.addFirst(1);
+        perry.addFirst(2);
+        perry.addFirst(3);
+        perry.addFirst(4);
+        perry.addFirst(5);
+        perry.addFirst(6);
+        perry.addFirst(7);
+
+        System.out.println(perry); //7654321
+        System.out.println(perry.contains(7)); //true
+        System.out.println(perry.contains(11)); // false
+
+
+	    perry.addLast(8);
+        System.out.println(perry); //76543218
+        System.out.println(perry.peekLast()); //8
+        System.out.println(perry.peekFirst()); //7
+
+	    perry.pollFirst();
+	    perry.pollLast();
+        System.out.println(perry.peekLast()); //1
+        System.out.println(perry.peekFirst()); //6
+
+	    System.out.println(perry.pollFirst()); //6
+    	System.out.println(perry.pollFirst()); //5
+	    System.out.println(perry.pollFirst()); //4
+    	System.out.println(perry.pollFirst()); //3
+	    System.out.println(perry.pollFirst()); //2
+
+        System.out.println(perry.peekLast()); //1
+        System.out.println(perry.peekFirst()); //1
+
+        perry.pollFirst(); //1
+
+    	System.out.println(perry.peekLast()); //null
+        System.out.println(perry.peekFirst()); //null
+
+        //testing offerFirst and offerLast
+
         QQCC<Integer> Verstappen = new QQCC<Integer>();
-        Verstappen.addFirst(1);
+        Verstappen.offerFirst(1);
         Verstappen.addFirst(2);
-        Verstappen.addFirst(3);
+        Verstappen.offerFirst(3);
         Verstappen.addFirst(4);
-        Verstappen.addFirst(5);
+        Verstappen.offerFirst(5);
         Verstappen.addFirst(6);
-        Verstappen.addFirst(7);
+        Verstappen.offerFirst(7);
+
+        //testing iterator
+
         Iterator<Integer> Riccardo = Verstappen.iterator();
         while(Riccardo.hasNext()) {
             System.out.print(Riccardo.next() + ", ");
         }
+
+        // should print out 7654321
+
         Verstappen.addLast(0);
-        Verstappen.addLast(-1);
+        Verstappen.offerLast(-1);
         Verstappen.addLast(-2);
-        Verstappen.addLast(-3);
+        Verstappen.offerLast(-3);
         Verstappen.addLast(-4);
-        Verstappen.addLast(-5);
+        Verstappen.offerLast(-5);
         Verstappen.addLast(-6);
-        Verstappen.addLast(-7);
+        Verstappen.offerLast(-7);
+
+        //testing descendingIterator
+
         Iterator<Integer> Botas = Verstappen.descendingIterator();
         System.out.println();
         while(Botas.hasNext()) {
@@ -37,6 +88,10 @@ public class MRKPirateBae {
             System.out.print(Botas.next() + ", ");
         }
         System.out.println();
+
+        //should print out -7 to 7
+        //testing addAll with a Stack
+
         Stack<Integer> Leclerc = new Stack<Integer>();
         Leclerc.push(-8);
         Leclerc.push(-9);
@@ -51,6 +106,35 @@ public class MRKPirateBae {
         }
         System.out.println();
 
+        //should print out 7 to -11
+        //testing remove and removeLastOccurrence
 
+        Verstappen.remove(-11);
+        Verstappen.remove(-10);
+        Verstappen.remove(-9);
+        Verstappen.remove(-8);
+        Verstappen.remove(-7);
+        Verstappen.remove(-6);
+        Verstappen.remove(-5);
+        Verstappen.remove(-4);
+        Verstappen.remove(-3);
+        Verstappen.remove(-2);
+        Verstappen.remove(-1);
+
+        System.out.println(Verstappen);
+
+        //should print out 7 to 0;
+
+        Verstappen.addLast(0);
+        Verstappen.addLast(0);
+        Verstappen.removeLastOccurrence(0);
+
+        System.out.println(Verstappen);
+
+        //should print out 7 to 0 with an extra 0
+        //testing contains
+
+        System.out.println(Verstappen.contains(0)); //true
+        System.out.println(Verstappen.contains(-1));        //false
     }
 }

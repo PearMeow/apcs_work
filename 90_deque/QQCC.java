@@ -60,53 +60,16 @@ public class QQCC<T> implements Deque<T> {
     public Iterator<T> descendingIterator(){
         return _data.descendingIterator();
     }
+
+    public boolean remove(T o) {
+        return _data.remove(o);
+    }   
+    public boolean removeLastOccurrence(T o) {
+        return _data.removeLastOccurrence(o);
+    }
     
     public String toString() {
         return _data.toString();
-    }
-
-
-    public static void main(String[] args) {
-        /*
-        QQCC<Integer> perry = new QQCC<Integer>(9);
-        perry.addFirst(1);
-        perry.addFirst(2);
-        perry.addFirst(3);
-        perry.addFirst(4);
-        perry.addFirst(5);
-        perry.addFirst(6);
-        perry.addFirst(7);
-
-        System.out.println(perry); //7654321
-        System.out.println(perry.contains(7)); //true
-        System.out.println(perry.contains(11)); // false
-
-
-	    perry.addLast(8);
-        System.out.println(perry); //76543218
-        System.out.println(perry.peekLast()); //8
-        System.out.println(perry.peekFirst()); //7
-
-	    perry.pollFirst();
-	    perry.pollLast();
-        System.out.println(perry.peekLast()); //1
-        System.out.println(perry.peekFirst()); //6
-
-	    System.out.println(perry.pollFirst()); //6
-    	System.out.println(perry.pollFirst()); //5
-	    System.out.println(perry.pollFirst()); //4
-    	System.out.println(perry.pollFirst()); //3
-	    System.out.println(perry.pollFirst()); //2
-
-        System.out.println(perry.peekLast()); //1
-        System.out.println(perry.peekFirst()); //1
-
-        perry.pollFirst(); //1
-
-    	System.out.println(perry.peekLast()); //null
-        System.out.println(perry.peekFirst()); //null
-        */
-
     }
 
 }
