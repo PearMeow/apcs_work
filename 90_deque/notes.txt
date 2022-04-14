@@ -6,11 +6,11 @@ time spent: 1 hr
 
 DISCO
 "Occurrence" is spelled with 3 c's and 2 r's. This caused some trouble in debugging.
-
+In LinkedList the methods are all just one line long.
 
 QCC
-
-
+Is having a very long driver file for testing good?
+How can we make good test cases that don't take up a hundred lines of code?
 
 
 Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
