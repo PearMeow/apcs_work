@@ -19,9 +19,9 @@ public class CelebrityRunner
 		while(true) {
 		Scanner sc = new Scanner(System.in);
 		boolean maybe = true;
-		System.out.print("No names, add more");
+		System.out.print("No names, ");
 		while ( maybe) {
-			System.out.println("Add a name");
+			System.out.println("add a name");
 			String newname = sc.nextLine();
 			System.out.println("Add a clue");
 			String newclue = sc.nextLine();
@@ -33,7 +33,7 @@ public class CelebrityRunner
 		
 		while(game.getCelebrityGameSize() != 0) {
 		game.play();
-		System.out.println"clue: " + (game.sendClue());
+		System.out.println("clue: " + (game.sendClue()));
 		boolean check = false;
 		while (!check) {
 			String guess = sc.nextLine();
