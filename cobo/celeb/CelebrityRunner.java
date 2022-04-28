@@ -14,8 +14,8 @@ public class CelebrityRunner
 	{
 		CelebrityGame game = new CelebrityGame();
 		game.prepareGame();
-		
-		System.out.print("Welcome player \nClue: ");
+
+		System.out.println("Welcome player ");
 		while(true) {
 		Scanner sc = new Scanner(System.in);
 		boolean maybe = true;
@@ -30,7 +30,7 @@ public class CelebrityRunner
 			String may = sc.nextLine();
 			maybe = may.equals("y");
 		}
-		
+
 		while(game.getCelebrityGameSize() != 0) {
 		game.play();
 		System.out.println("clue: " + (game.sendClue()));
@@ -46,6 +46,7 @@ public class CelebrityRunner
 			}
 		}
 		}
+		System.out.print("No Names, ");
 		}
 	}
 }
