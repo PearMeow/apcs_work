@@ -48,5 +48,5 @@ There has to be the maximum nodes at the bottom level and none of them can have 
 C'EST POSSIBLE?
 ------------------------------------------------
 < your explanation of whether the tree reconstruction challenge given in class is achievable or not >
-Yes, because 
+Yes, because you can figure out where nodes end using the post order traversal and you can figure out what the order of the nodes are using the pre order traversal.
 ================================================
