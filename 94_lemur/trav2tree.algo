@@ -1,8 +1,8 @@
-Teh Tree Stooges :: Mo, Lairree, curl
-APCS pd0
+Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+APCS pd07
 HW94 -- reverse engineering
-2022-05-06f
-time spent:  hrs
+2022-05-06
+time spent: 9001 hrs
 
 
 DISCO
@@ -20,22 +20,22 @@ QCC
 HOW KEEN ARE YOUR POWERS OF OBSERVATION?
 ------------------------------------------------
 Q: For a given binary tree, how many unique pre-order traversals are there?
-A: 
+A: 1
 
 Q: For a given binary tree, how many unique in-order traversals are there?
-A: 
+A: 1
 
 Q: For a given binary tree, how many unique post-order traversals are there?
-A: 
+A: 1
 
 Q: For a given traversal, how many unique trees could have produced it?
-A: 
+A: The number of unique trees are equal to the number of nodes in the traversal.
 
 Q: Given a pre-order traversal, what can you infer about its tree?
-A: 
+A: The first node is the root and the last node is the rightmost node.
 
 Q: Given a post-order traversal, what can you infer about its tree?
-A: 
+A: The last node is the root and thhe first node is the leftmost node.
 
 Q: What does "1-to-1" mean?
 A: 
