@@ -82,9 +82,8 @@ givens:
 * Traversals make valid tree
 * Trees are binary
 procedure: (letters in parentheses are the new name of the node they are next to)
-* First letter of pre  is root
+* First letter of pre is root
 * Identify root in in-order
 * remove everything after and including the root in in-order. Remove same letters from pre. Restart to get left subtree of the root
 * remove everything before and including the root in in-order. Remove same letters from pre. Restart to get right subtree of the root
-================================================
 ================================================
