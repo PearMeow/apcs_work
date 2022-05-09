@@ -4,13 +4,11 @@ HW94 -- reverse engineering
 2022-05-06
 time spent: 1 hr
 
-
 DISCO
 ------------------------------------------------
 * Recursive algos are the way to go
 * Algos need to be well-organized and folloewd carefully
 ================================================
-
 
 QCC
 ------------------------------------------------
@@ -19,7 +17,6 @@ QCC
 * Is one node a tree?
 * What do onto and 1-to-1 mean in the context of trees?
 ================================================
-
 
 HOW KEEN ARE YOUR POWERS OF OBSERVATION?
 ------------------------------------------------
