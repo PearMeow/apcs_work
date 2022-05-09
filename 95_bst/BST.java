@@ -22,9 +22,9 @@ public class BST
   /**
    * default constructor
    */
-  BST()
+  public BST( TreeNode newTree)
   {
-    _root = new TreeNode();
+    _root = newTree;
   }
 
 
@@ -34,19 +34,28 @@ public class BST
    */
   public void insert( int newVal )
   {
+    TreeNode temp = _root;
     TreeNode newNode = new TreeNode( newVal );
-    if (newVal < _root.getValue()) {
-      if (_root.getLeft().equals(null)) {
-        _root.setLeft(newNode);
+    while (true) {
+      if (newVal < temp.getValue()) {
+        if (temp.getLeft().equals(null)) {
+          temp.setLeft(newNode);
+          return;
+        }
+        else {
+          temp = temp.getLeft();
+        }
       }
-      _root.getLeft().insert(newVal);
-    }
-    else {
-      if (_root.getRight().equals(null)) {
-        _root.setRight(newNode);
-      }
-      _root.getRight().insert(newVal);
-    }
+      else {
+        if (temp.getRight().equals(null)) {
+          temp.setRight(newNode);
+          return;
+        }
+        else {
+          temp = temp.getRight();
+        }
+     }
+  }
   }
  
 
