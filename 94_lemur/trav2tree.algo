@@ -9,7 +9,6 @@ DISCO
 * Recursive algos are the way to go
 * Algos need to be well-organized and folloewd carefully
 ================================================
-
 QCC
 ------------------------------------------------
 * Do our algos work?
@@ -17,7 +16,6 @@ QCC
 * Is one node a tree?
 * What do onto and 1-to-1 mean in the context of trees?
 ================================================
-
 HOW KEEN ARE YOUR POWERS OF OBSERVATION?
 ------------------------------------------------
 Q: For a given binary tree, how many unique pre-order traversals are there?
@@ -45,7 +43,6 @@ Q: What does "onto" mean?
 A: Every input has at least one output
 
 ================================================
-
 ALGO for one pre-order and one post-order
 ------------------------------------------------
 givens:
@@ -60,7 +57,6 @@ procedure: (letters in parentheses are the new name of the node they are next to
   * remove all letters before (r) in pre, and take the same letters out of post, restart procedure on remaining letters to get subtree with root r
 
 ================================================
-
 ALGO for one in-order and one post-order
 ------------------------------------------------
 givens:
@@ -71,8 +67,8 @@ procedure: (letters in parentheses are the new name of the node they are next to
 * Identify root in in-order
 * remove everything after and including the root in in-order. Remove same letters from post. Restart to get left subtree of the root
 * remove everything before and including the root in in-order. Remove same letters from post. Restart to get right subtree of the root
-================================================
 
+================================================
 ALGO for one pre-order and one in-order
 ------------------------------------------------
 givens:
@@ -83,4 +79,5 @@ procedure: (letters in parentheses are the new name of the node they are next to
 * Identify root in in-order
 * remove everything after and including the root in in-order. Remove same letters from pre. Restart to get left subtree of the root
 * remove everything before and including the root in in-order. Remove same letters from pre. Restart to get right subtree of the root
+
 ================================================
