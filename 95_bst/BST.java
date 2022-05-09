@@ -74,13 +74,17 @@ public class BST
   }
   public void preOrderTrav( TreeNode currNode )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    System.out.println(currNode.getValue());
+    if (!currNode.getLeft().equals(null)) {
+      preOrderTrav(currNode.getLeft());
+      preOrderTrav(currNode.getRight());
+    }
   }
 
   //recurse left, process root, recurse right
   public void inOrderTrav()
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    inOrderTrav(_root.getLeft());
   }
   public void inOrderTrav( TreeNode currNode )
   {
