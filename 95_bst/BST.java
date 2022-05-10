@@ -98,6 +98,9 @@ public class BST
       System.out.println(currNode);
       inOrderTrav(currNode.getRight());
     }
+    else {
+      System.out.println(currNode);
+    }
   }
 
   //recurse left, recurse right, process root
