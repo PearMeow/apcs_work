@@ -2,7 +2,7 @@ Max Schneider  Perry Huang  Oscar Breen
 APCS
 HW 95 -- Algorithm as Data Structure -- writing the trees as code
 2022-05-09
-time spent: <elapsed time in hours, rounded to nearest tenth>
+time spent: 2 hrs
 
  L = level  d = depth  h = height
 q1) a perfect binary tree has 2^h -1 nodes
