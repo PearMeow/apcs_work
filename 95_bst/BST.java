@@ -24,7 +24,7 @@ public class BST
    */
   public BST()
   {
-    _root = new TreeNode(-1);
+
   }
 
 
@@ -34,12 +34,16 @@ public class BST
    */
   public void insert( int newVal )
   {
-    if (_root.getValue() == -1) {
-      _root.setValue(newVal);
-      return;
-    }
+
     TreeNode temp = _root;
     TreeNode newNode = new TreeNode( newVal );
+
+  if( _root == null){
+    _root = newNode;
+  }
+
+
+  else{
     while (true) {
       if (newVal < temp.getValue()) {
         if (temp.getLeft() == null) {
@@ -59,6 +63,7 @@ public class BST
           temp = temp.getRight();
         }
      }
+   }
   }
   }
  
@@ -78,11 +83,9 @@ public class BST
   }
   public void preOrderTrav( TreeNode currNode )
   {
+   if (currNode != null) {
     System.out.print(currNode.getValue());
-    if (currNode.getLeft() != null) {
       preOrderTrav(currNode.getLeft());
-    }
-    if (currNode.getRight() != null) {
       preOrderTrav(currNode.getRight());
     }
   }
@@ -90,22 +93,16 @@ public class BST
   //recurse left, process root, recurse right
   public void inOrderTrav()
   {
-    inOrderTrav(_root); 
+    inOrderTrav(_root);
   }
   public void inOrderTrav( TreeNode currNode )
   {
-    if (currNode.getLeft() != null) {
+    if (currNode != null) {
       inOrderTrav(currNode.getLeft());
-      System.out.print(currNode.getValue());
-    }
-    if (currNode.getRight() != null) {
-      inOrderTrav(currNode.getRight());
-    }
-    if (currNode.getLeft() == null && currNode.getRight() == null) {
-      System.out.print(currNode.getValue());
+       System.out.print(currNode.getValue());
+       inOrderTrav(currNode.getRight());
     }
   }
-
   //recurse left, recurse right, process root
   public void postOrderTrav()
   {
@@ -113,19 +110,13 @@ public class BST
   }
   public void postOrderTrav( TreeNode currNode )
   {
-    if (currNode.getLeft() != null) {
+    if(currNode != null){
       postOrderTrav(currNode.getLeft());
-    }
-    if(currNode.getRight() != null) {
       postOrderTrav(currNode.getRight());
-    }
-    if (currNode.getLeft() == null && currNode.getRight() == null) {
       System.out.print(currNode.getValue());
-    }
-    else {
-    System.out.print(currNode.getValue());
-    }
+   }
   }
+
 
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -159,8 +150,7 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
-      /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+//      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ //
   }
 
 }//end class
