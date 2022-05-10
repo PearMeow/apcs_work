@@ -94,11 +94,11 @@ public class BST
       inOrderTrav(currNode.getLeft());
       System.out.println(currNode);
     }
-    if(!currNode.getRight().equals(null)) {
+    if (!currNode.getRight().equals(null)) {
       System.out.println(currNode);
       inOrderTrav(currNode.getRight());
     }
-    else {
+    if (!currNode.getLeft().equals(null) && !currNode.getRight().equals(null)) {
       System.out.println(currNode);
     }
   }
@@ -106,11 +106,22 @@ public class BST
   //recurse left, recurse right, process root
   public void postOrderTrav()
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    inOrderTrav(_root.getLeft());
   }
   public void postOrderTrav( TreeNode currNode )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    if (!currNode.getLeft().equals(null)) {
+      inOrderTrav(currNode.getLeft());
+    }
+    if(!currNode.getRight().equals(null)) {
+      inOrderTrav(currNode.getRight());
+    }
+    if (!currNode.getLeft().equals(null) && !currNode.getRight().equals(null)) {
+      System.out.println(currNode);
+    }
+    else {
+    System.out.println(currNode);
+    }
   }
 
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
