@@ -74,7 +74,7 @@ public class BST
   }
   public void preOrderTrav( TreeNode currNode )
   {
-    System.out.println(currNode.getValue());
+    System.out.print(currNode.getValue());
     if (!currNode.getLeft().equals(null)) {
       preOrderTrav(currNode.getLeft());
     }
@@ -92,14 +92,14 @@ public class BST
   {
     if (!currNode.getLeft().equals(null)) {
       inOrderTrav(currNode.getLeft());
-      System.out.println(currNode);
+      System.out.print(currNode.getValue());
     }
     if (!currNode.getRight().equals(null)) {
-      System.out.println(currNode);
+      System.out.print(currNode);
       inOrderTrav(currNode.getRight());
     }
     if (!currNode.getLeft().equals(null) && !currNode.getRight().equals(null)) {
-      System.out.println(currNode);
+      System.out.print(currNode.getValue());
     }
   }
 
@@ -117,10 +117,10 @@ public class BST
       inOrderTrav(currNode.getRight());
     }
     if (!currNode.getLeft().equals(null) && !currNode.getRight().equals(null)) {
-      System.out.println(currNode);
+      System.out.print(currNode.getValue());
     }
     else {
-    System.out.println(currNode);
+    System.out.print(currNode.getValue());
     }
   }
 
@@ -131,7 +131,6 @@ public class BST
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
 
       BST arbol = new BST();
 
@@ -157,6 +156,7 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
+      /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
 
