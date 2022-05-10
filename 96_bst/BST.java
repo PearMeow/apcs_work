@@ -125,15 +125,16 @@ public class BST
      *****************************************************/
     TreeNode search( int target )
     {
-    	if (this._root.getValue() < target) {
-        this._root.getLeft().search(target);
+      TreeNode temp = null; 
+      if (this._root != null) {
+        if (this._root.getValue() == target) {
+          temp = this._root;
+          return temp;
+        }
+        temp = this._root.getLeft().search(target);
+        temp = this._root.getRight().search(target);
       }
-      else if (this._root.getValue() > target) {
-        this._root.getRight().search(target);
-      } else {
-        return this._root;
-      }
-      return null;
+        return temp;
     }
 
 
@@ -187,6 +188,9 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
+      System.out.println( "search for 4:" );
+      System.out.println(arbol.search(4).getValue());
+
   //      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ //
   }
 
