@@ -90,7 +90,7 @@ public class BST
   //recurse left, process root, recurse right
   public void inOrderTrav()
   {
-    inOrderTrav(_root.getLeft()); 
+    inOrderTrav(_root); 
   }
   public void inOrderTrav( TreeNode currNode )
   {
@@ -99,10 +99,9 @@ public class BST
       System.out.print(currNode.getValue());
     }
     if (currNode.getRight() != null) {
-      System.out.print(currNode.getValue());
       inOrderTrav(currNode.getRight());
     }
-    if (currNode.getLeft() != null && currNode.getRight() != null) {
+    if (currNode.getLeft() == null && currNode.getRight() == null) {
       System.out.print(currNode.getValue());
     }
   }
@@ -110,17 +109,17 @@ public class BST
   //recurse left, recurse right, process root
   public void postOrderTrav()
   {
-    inOrderTrav(_root.getLeft());
+    postOrderTrav(_root);
   }
   public void postOrderTrav( TreeNode currNode )
   {
     if (currNode.getLeft() != null) {
-      inOrderTrav(currNode.getLeft());
+      postOrderTrav(currNode.getLeft());
     }
     if(currNode.getRight() != null) {
-      inOrderTrav(currNode.getRight());
+      postOrderTrav(currNode.getRight());
     }
-    if (currNode.getLeft() != null && currNode.getRight() != null) {
+    if (currNode.getLeft() == null && currNode.getRight() == null) {
       System.out.print(currNode.getValue());
     }
     else {
