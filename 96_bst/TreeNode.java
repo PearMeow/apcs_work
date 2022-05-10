@@ -90,7 +90,8 @@ public class TreeNode
   {
     _cargo = theNewValue;
   }
-TreeNode search( int target )
+/*
+  TreeNode search( int target )
     {
     	if (this.getValue() < target) {
         this.getLeft().search(target);
@@ -102,4 +103,5 @@ TreeNode search( int target )
       }
       return null;
     }
+*/
 }//end class

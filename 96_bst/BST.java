@@ -99,8 +99,8 @@ public class BST
   {
     if (currNode != null) {
       inOrderTrav(currNode.getLeft());
-       System.out.print(currNode.getValue());
-       inOrderTrav(currNode.getRight());
+      System.out.print(currNode.getValue());
+      inOrderTrav(currNode.getRight());
     }
   }
   //recurse left, recurse right, process root
@@ -134,7 +134,7 @@ public class BST
         temp = this._root.getLeft().search(target);
         temp = this._root.getRight().search(target);
       }
-        return temp;
+      return temp;
     }
 
 
@@ -145,7 +145,8 @@ public class BST
      *****************************************************/
     public int height()
     {
-    	return 0;
+      int height = 1;
+    	return height;
     }
 
 
@@ -155,7 +156,7 @@ public class BST
      *****************************************************/
     public int numLeaves()
     {
-    	return 0;
+
     }
 
 
