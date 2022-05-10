@@ -22,9 +22,9 @@ public class BST
   /**
    * default constructor
    */
-  public BST( TreeNode newTree)
+  public BST()
   {
-    _root = newTree;
+    _root = new TreeNode(-1);
   }
 
 
@@ -34,11 +34,15 @@ public class BST
    */
   public void insert( int newVal )
   {
+    if (_root.getValue() == -1) {
+      _root.setValue(newVal);
+      return;
+    }
     TreeNode temp = _root;
     TreeNode newNode = new TreeNode( newVal );
     while (true) {
       if (newVal < temp.getValue()) {
-        if (temp.getLeft().equals(null)) {
+        if (temp.getLeft() == null) {
           temp.setLeft(newNode);
           return;
         }
@@ -47,7 +51,7 @@ public class BST
         }
       }
       else {
-        if (temp.getRight().equals(null)) {
+        if (temp.getRight() == null) {
           temp.setRight(newNode);
           return;
         }
@@ -75,10 +79,10 @@ public class BST
   public void preOrderTrav( TreeNode currNode )
   {
     System.out.print(currNode.getValue());
-    if (!currNode.getLeft().equals(null)) {
+    if (currNode.getLeft() != null) {
       preOrderTrav(currNode.getLeft());
     }
-    if (!currNode.getRight().equals(null)) {
+    if (currNode.getRight() != null) {
       preOrderTrav(currNode.getRight());
     }
   }
@@ -90,15 +94,15 @@ public class BST
   }
   public void inOrderTrav( TreeNode currNode )
   {
-    if (!currNode.getLeft().equals(null)) {
+    if (currNode.getLeft() != null) {
       inOrderTrav(currNode.getLeft());
       System.out.print(currNode.getValue());
     }
-    if (!currNode.getRight().equals(null)) {
-      System.out.print(currNode);
+    if (currNode.getRight() != null) {
+      System.out.print(currNode.getValue());
       inOrderTrav(currNode.getRight());
     }
-    if (!currNode.getLeft().equals(null) && !currNode.getRight().equals(null)) {
+    if (currNode.getLeft() != null && currNode.getRight() != null) {
       System.out.print(currNode.getValue());
     }
   }
@@ -110,13 +114,13 @@ public class BST
   }
   public void postOrderTrav( TreeNode currNode )
   {
-    if (!currNode.getLeft().equals(null)) {
+    if (currNode.getLeft() != null) {
       inOrderTrav(currNode.getLeft());
     }
-    if(!currNode.getRight().equals(null)) {
+    if(currNode.getRight() != null) {
       inOrderTrav(currNode.getRight());
     }
-    if (!currNode.getLeft().equals(null) && !currNode.getRight().equals(null)) {
+    if (currNode.getLeft() != null && currNode.getRight() != null) {
       System.out.print(currNode.getValue());
     }
     else {
