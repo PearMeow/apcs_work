@@ -90,18 +90,5 @@ public class TreeNode
   {
     _cargo = theNewValue;
   }
-/*
-  TreeNode search( int target )
-    {
-    	if (this.getValue() < target) {
-        this.getLeft().search(target);
-      }
-      else if (this.getValue() > target) {
-        this.getRight().search(target);
-      } else {
-        return this;
-      }
-      return null;
-    }
-*/
+
 }//end class

@@ -99,8 +99,8 @@ public class BST
   {
     if (currNode != null) {
       inOrderTrav(currNode.getLeft());
-      System.out.print(currNode.getValue());
-      inOrderTrav(currNode.getRight());
+       System.out.print(currNode.getValue());
+       inOrderTrav(currNode.getRight());
     }
   }
   //recurse left, recurse right, process root
@@ -131,10 +131,12 @@ public class BST
           temp = this._root;
           return temp;
         }
-        temp = this._root.getLeft().search(target);
-        temp = this._root.getRight().search(target);
+        this._root.getLeft().search(target);
+        this._root.getRight().search(target);
       }
-      return temp;
+      if (this._root.equals(_root)) {
+        return temp;
+      }
     }
 
 
@@ -145,8 +147,7 @@ public class BST
      *****************************************************/
     public int height()
     {
-      int height = 1;
-    	return height;
+    	return 0;
     }
 
 
@@ -156,7 +157,7 @@ public class BST
      *****************************************************/
     public int numLeaves()
     {
-
+    	return 0;
     }
 
 
@@ -189,9 +190,6 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
-      System.out.println( "search for 4:" );
-      System.out.println(arbol.search(4).getValue());
-
   //      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ //
   }
 
