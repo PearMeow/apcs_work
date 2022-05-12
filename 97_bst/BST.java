@@ -150,11 +150,8 @@ public class BST
     }
 
     public void remove(int val) {
-      if (_root.getLeft == null && _root.getRight == null) {
-        _root = null;
-        return;
-      }
-      return _root.remove(val);
+      TreeNode ParRem = _root.findPar(val);
+      ParRem.remove(val);
     }
 
   //main method for testing
@@ -165,46 +162,39 @@ public class BST
 
       //PROTIP: sketch state of tree after each insertion
       //        ...BEFORE executing these.
-      arbol.insert( 4 );
-      arbol.insert( 2 );
-      arbol.insert( 5 );
-      arbol.insert( 6 );
-      arbol.insert( 1 );
-      arbol.insert( 3 );
-      arbol.insert( 9 );
-      arbol.insert( 8 );
-      arbol.insert( 10 );
-      arbol.insert( 11 );
-      arbol.insert( 7 );
-      arbol.insert( 12 );
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "pre-order traversal:" );
-      arbol.preOrderTrav();
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "in-order traversal:" );
+      arbol.insert(15);
+      arbol.insert(8);
+      arbol.insert(23);
+      arbol.insert(4);
+      arbol.insert(12);
+      arbol.insert(19);
+      arbol.insert(27);
+      arbol.insert(2);
+      arbol.insert(6);
+      arbol.insert(10);
+      arbol.insert(14);
+      arbol.insert(17);
+      arbol.insert(21);
+      arbol.insert(25);
+      arbol.insert(29);
+      arbol.insert(31);
+      arbol.insert(1);
+      arbol.insert(3);
+      arbol.insert(5);
+      arbol.insert(7);
+      arbol.insert(9);
+      arbol.insert(11);
+      arbol.insert(13);
+      arbol.insert(30);
+      arbol.insert(16);
+      arbol.insert(18);
+      arbol.insert(20);
+      arbol.insert(22);
+      arbol.insert(24);
+      arbol.insert(26);
+      arbol.insert(28);
+      arbol.remove(8);
       arbol.inOrderTrav();
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "post-order traversal:" );
-      arbol.postOrderTrav();
-
-      System.out.println( "\n-----------------------------");
-      System.out.println( "search for 4:" );
-      System.out.println(arbol.search(4).getValue());
-      System.out.println( "search for 2:" );
-      System.out.println(arbol.search(2).getValue());
-      System.out.println( "search for 6:" );
-      System.out.println(arbol.search(6).getValue());
-
-      System.out.println("\n--------------------------");
-      System.out.println("Count the 12 leaves");
-      System.out.println(arbol.numLeaves());
-
-      System.out.println("\n--------------------------");
-      System.out.println("Find the height of 7");
-      System.out.println(arbol.height());
   //      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ //
   }
 

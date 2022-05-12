@@ -1,9 +1,15 @@
-Team Pom Pom: Max Schneider, Oscar Breen, Perry Huang
+Max Schneider, Oscar Breen, Perry Huang
 APCS
-HW96 -- BSTs is the Perfect Place for Shade / making height and leaf count methods and a search method
+HW97 -- <Prune your Tree / adding a remove method
 2022-05-11
-time spent: 69.69 hrs
+time spent: 2
 
-DISCO:
+DISCO 
+   - Its a lot of code
+   - removing a node with two kids is significantly harder than one with two kids
+   - there are a lot of scenarios, 
+   - we have to have double of each code for both a left and right scenario
 
-QCC
+QCC:
+   - how to remove root without parent of root
+   - how would we make this shorter
