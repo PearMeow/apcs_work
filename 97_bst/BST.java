@@ -149,7 +149,13 @@ public class BST
       return _root.numLeaves();
     }
 
-
+    public void remove(int val) {
+      if (_root.getLeft == null && _root.getRight == null) {
+        _root = null;
+        return;
+      }
+      return _root.remove(val);
+    }
 
   //main method for testing
   public static void main( String[] args )

@@ -1,0 +1,9 @@
+Team Pom Pom: Max Schneider, Oscar Breen, Perry Huang
+APCS
+HW96 -- BSTs is the Perfect Place for Shade / making height and leaf count methods and a search method
+2022-05-11
+time spent: 69.69 hrs
+
+DISCO:
+
+QCC

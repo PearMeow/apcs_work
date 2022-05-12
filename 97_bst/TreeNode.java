@@ -141,6 +141,20 @@ public class TreeNode
 
       }
       return i;
+    }
 
+    public void remove(int val) {
+      if (this.getLeft() != null) {
+        if (this.getLeft().getValue() == val) {
+          return;
+        }
+        this.getLeft.remove(val);
+      }
+      if (this.getRight() != null) {
+        if (this.getRight().getValue() == val) {
+          return;
+        }
+        this.getRight().remove(val);
+      }
     }
 }//end class
