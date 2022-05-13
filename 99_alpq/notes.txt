@@ -12,3 +12,9 @@ Adding in APQ is similar to insertionSort
 QCC
 Can this be translated to work on objects?
 What is the benefit of an APQ?
+
+Time Complexities
+peekMin(): O(1)
+removeMin(): O(1)
+isEmpty(): O(1)
+add(): O(1) to O(n)
