@@ -196,7 +196,7 @@ class TourFinder
    **/
   public void findTour( int x, int y, int moves )
   {
-    delay(50); //slow it down enough to be followable
+    delay(10); //slow it down enough to be followable
 
     //primary base case: tour completed
     if ( moves == _sideLength*_sideLength && _board[x][y] == 0) {
@@ -220,7 +220,7 @@ class TourFinder
 
       System.out.println( this ); //refresh screen
 
-      delay(1000); //uncomment to slow down enough to view
+      delay(10); //uncomment to slow down enough to view
 
       /******************************************
        * Recursively try to "solve" (find a tour) from
