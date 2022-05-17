@@ -81,7 +81,7 @@ public class ALHeap
    */
   public Integer removeMin()
   {
-    int retVal = _heap.get(0);
+    Integer retVal = _heap.get(0);
     this.swap(0, _heap.size() - 1);
     _heap.remove(_heap.size() - 1);
     int curr = 0;
@@ -89,6 +89,7 @@ public class ALHeap
       this.swap(curr, this.minChildPos(curr));
       curr = this.minChildPos(curr);
     }
+    return retVal;
   }//O(?)
 
 
