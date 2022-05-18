@@ -1,4 +1,16 @@
-/**
+  /*
+ * Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+ * APCS
+ * HW102 -- Heap On Heapin' On
+ * 2022-05-17
+ * time spent: 0.5 hrs
+ * 
+ * DISCO
+ * The visualizer helped a lot with understanding how adding and removing works.
+ * 
+ * QCC
+ * How to make cool toString?
+ * 
  * class ALHeap
  * SKELETON
  * Implements a min heap using an ArrayList as underlying container
@@ -17,6 +29,7 @@ public class ALHeap
    */
   public ALHeap()
   {
+    _heap = new ArrayList<Integer>(); 
   }
 
 
@@ -63,12 +76,17 @@ public class ALHeap
    */
   public void add( Integer addVal )
   {
+//    if(_heap.size() < 1){
+  //      _heap.setVal(addVal);
+     //}
+  //else(
     _heap.add(addVal);
     int curr = _heap.size() - 1;
     while (_heap.get(curr) < _heap.get((curr - 1) / 2) ) {
       this.swap(curr,(curr - 1)/2);
       curr = (curr - 1)/2;
     }
+   //}
   }//O(?)
 
 
@@ -81,13 +99,20 @@ public class ALHeap
    */
   public Integer removeMin()
   {
+   if(_heap.size() == 0)
+      return -1;
     Integer retVal = _heap.get(0);
     this.swap(0, _heap.size() - 1);
     _heap.remove(_heap.size() - 1);
     int curr = 0;
-    while (_heap.get(curr) > _heap.get(this.minChildPos(curr))) {
+     while(this.minChildPos(curr) > -1){
+     if(_heap.get(curr) > _heap.get(this.minChildPos(curr))) {
       this.swap(curr, this.minChildPos(curr));
       curr = this.minChildPos(curr);
+      }
+     else{
+      return retVal;
+     }
     }
     return retVal;
   }//O(?)
@@ -101,6 +126,8 @@ public class ALHeap
    */
   private int minChildPos( int pos )
   {
+  if(pos * 2 + 1 < _heap.size()){
+   if((pos * 2 + 2) < _heap.size()){
     int l = _heap.get(2 * pos + 1);
     int r = _heap.get(2 * pos + 2);
     if ( l < r) {
@@ -108,6 +135,10 @@ public class ALHeap
     } else {
       return pos * 2 + 2;
     }
+   }
+   return pos * 2 + 1;
+  }
+   return -1;
   }//O(?)
 
 
