@@ -26,10 +26,10 @@ public class RunMed {
 
     public void balance() {
 
-        if (lilVals.size() > bigVals.size() + 1) {
+        if (lilVals.size() > bigVals.size()) {
             bigVals.add(lilVals.removeMax());
         }
-        else if (bigVals.size() > lilVals.size()) {
+        else if (bigVals.size() > lilVals.size() + 1) {
             lilVals.add(bigVals.removeMin());
         }
 
@@ -45,6 +45,10 @@ public class RunMed {
     }
 
     public void add(Integer newVal) {
+        if (bigVals.isEmpty()) {
+            bigVals.add(newVal);
+            return;
+        }
         if (newVal > bigVals.peekMin()) {
             bigVals.add(newVal);
         }
@@ -54,4 +58,23 @@ public class RunMed {
         balance();
     }
 
+    public static void main(String[] args) {
+
+        RunMed perry = new RunMed();
+        perry.add(6);
+        perry.add(5);
+        perry.getMedian();
+        /*
+        perry.add();
+        perry.add();
+        perry.add();
+        perry.add();
+        perry.add();
+        perry.add();
+        perry.add();
+        perry.add();
+        */
+
+
+    }
 }
