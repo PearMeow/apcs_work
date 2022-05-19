@@ -39,12 +39,12 @@ public class RunMed {
 
     }
 
-    public Integer getMedian() {
+    public double getMedian() {
         if ((lilVals.size() + bigVals.size()) % 2 == 0) {
-            return (lilVals.peekMax() + bigVals.peekMin()) / 2;
+            return ((double)lilVals.peekMax() + bigVals.peekMin()) / 2;
         }
         else {
-            return lilVals.peekMax();
+            return (double)lilVals.peekMax();
         }
     }
 
