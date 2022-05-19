@@ -3,14 +3,18 @@ Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
 APCS
 HW103 -- Erica's Friends, Hugo, and The One in the Middle
 2022-05-18
-time spent: L Bozo hours
+time spent: 1 hr
 
 DISCO
+Using keys made it much easier to visualize and make an algo.
 
 QCC
+Should there be a helper method called balance to balance the heaps or should that be in add?
+Which one is better design?
 
-ALGO
-
+ALGO for getMedian
+If the sum of the sizes of the two heaps are even, then return the sum of the greatest value in lilVals
+and the least value in bigVals divided by two. Otherwise return the least value in bigVals. 
 
 */
 import java.util.ArrayList;
