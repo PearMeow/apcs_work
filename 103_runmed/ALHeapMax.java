@@ -54,6 +54,9 @@ public class ALHeapMax
    */
   public boolean isEmpty() { return _heap.isEmpty(); } //O(1)
 
+  public int size() { return _heap.size(); }
+
+  public Integer get(int pos) { return _heap.get(pos); }
 
   /**
    * Integer peekMin()

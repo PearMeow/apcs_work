@@ -54,6 +54,8 @@ public class ALHeapMin
    */
   public boolean isEmpty() { return _heap.isEmpty(); } //O(1)
 
+  public int size() { return _heap.size(); }
+
 
   /**
    * Integer peekMin()
