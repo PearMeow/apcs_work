@@ -1,9 +1,22 @@
-/**
- * class Heapsort
- * SKELETON
- * sorts in-place by heapifying data, then repeatedly pulling from heap
- */
+/*
+Team Pom Pom: Max Schneider, Perry Huang, Oscar Breen
+APCS
+HW104 -- Unknown
+2022-05-19
+time spent: 1.5 hr
 
+DISCO
+* Heap sort has potentially
+* Could be quite fast in some situations
+
+
+QCC
+* Why HEAP?
+
+
+
+*/
+import java.util.ArrayList;
 public class Heapsort
 {
 
@@ -11,10 +24,10 @@ public class Heapsort
    * int[] sort( int[] data )  --- returns sorted input array
    * Applies heapsort algorithm (in place)
    */
+
   public int[] sort( int[] data )
   {
-    System.out.print( "Input array: \t" );
-    printArr( data );
+
 
 
     //STEP 1: heapify array contents
@@ -22,44 +35,50 @@ public class Heapsort
     //(heap will grow from L to R)
 
     maxHeapify(data);
-    System.out.println( "Array heapified. Root at index 0" );
-    printArr( data );
+    System.out.print("Heap: " );
+    printArr(data);
 
 
     //STEP 2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = data.length - 1; lastLeaf >= 0; lastLeaf++) {
+    for( int lastLeaf = data.length - 1; lastLeaf > 0; lastLeaf--) {
       //set aside root val
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
-
+      swap(0, lastLeaf, data);
       //walk now-out-of-place root node down the tree...
-      int pos = ;
+      int pos = 0;
       int minChildPos;
       int maxChildPos;
 
-      while(  ) {
+      while( pos <= lastLeaf ) {
 
         //choose child w/ max value, or check for child
+        maxChildPos = maxChildPos(pos, lastLeaf, data);
 
+        System.out.println("pos: " + pos + "maxPos: " + maxChildPos);
+        printArr(data);
         //if no children, then i've walked far enough
         if ( maxChildPos == -1 )
           break;
         //if i am greater than my greatest child, i've walked far enough
-        else if (  )
+        else if ( data[pos] > data[maxChildPos] )
           break;
         //if i am > least child, swap with that child
         else {
-
+          swap(pos, maxChildPos, data);
+          pos = maxChildPos;
         }
       }
 
-      //overwrite last leaf with old root val
+      data[lastLeaf] = tmp;
 
     }
 
-
+    if (data[0] > data[1]) {
+      swap(0,1,data);
+    }
     //STEP teh LAST: return modified array
     return data;
 
@@ -69,10 +88,10 @@ public class Heapsort
 
   private void minHeapify( int[] a )
   {
-    for( int i = 1; i < a.length; i++ ) {
+    for( int i = 1; i < a.length ; i++ ) {
       //add a[i] as leaf
-      int addValPos = i - 1; //val to add is next non-heap element
-
+      int addValPos = i; //val to add is next non-heap element
+      a[addValPos] = a[i];
       //now must percolate up
       while( addValPos > 0 ) { //potentially swap until reach root
 
@@ -95,8 +114,8 @@ public class Heapsort
   {
     for( int i = 1; i < a.length; i++ ) {
       //add a[i] as leaf
-      int addValPos = i - 1; //val to add is next non-heap element
-
+      int addValPos = i ; //val to add is next non-heap element
+      a[addValPos] = a[i];
       //now must percolate up
       while( addValPos > 0 ) { //potentially swap until reach root
 
@@ -155,7 +174,7 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( lc < last && rc < last && pos > -1)
+    if (!( lc < last && rc < last && pos > -1))
       retVal = -1;
     //if no right child, then left child is only option for max
     else if ( rc > last  )
@@ -222,17 +241,18 @@ public class Heapsort
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    int[] a = buildArray( 10, 10 );
 
+    int[] a = buildArray( 7, 100 );
+    System.out.print("Initial Array: ");
     printArr(a);
 
     Heapsort h = new Heapsort();
 
+
     h.sort(a);
 
     printArr(a);
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 
   }//end main()
 
