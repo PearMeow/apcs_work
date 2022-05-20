@@ -93,7 +93,7 @@ public class ALHeapMax
       //pinpoint parent
       parentPos = (addValPos-1) / 2;
 
-      if ( addVal.compareTo(_heap.get(parentPos)) > 0 ) { //addVal < parent
+      if ( addVal.compareTo(_heap.get(parentPos)) > 0 ) { //addVal > parent
         swap( addValPos, parentPos );
         addValPos = parentPos;
       }
@@ -104,8 +104,8 @@ public class ALHeapMax
 
 
   /**
-   * removeMin()  ---  means of removing an element from heap
-   * Removes and returns least element in heap.
+   * removeMax()  ---  means of removing an element from heap
+   * Removes and returns greatest element in heap.
    * Postcondition: Tree maintains heap property.
    * ALGO:
    * <your clear && concise procedure here>
@@ -154,8 +154,8 @@ public class ALHeapMax
 
 
   /**
-   * minChildPos(int)  ---  helper fxn for removeMin()
-   * Returns index of least child, or
+   * maxChildPos(int)  ---  helper fxn for removeMin()
+   * Returns index of greatest child, or
    * -1 if no children, or if input pos is not in ArrayList
    * Postcondition: Tree unchanged
    */
