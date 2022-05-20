@@ -28,14 +28,14 @@ public class Heapsort
 
     //STEP 2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = ; ;  ) {
+    for( int lastLeaf = data.length - 1; lastLeaf >= 0; lastLeaf++) {
       //set aside root val
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
 
       //walk now-out-of-place root node down the tree...
-      int pos =
+      int pos = ;
       int minChildPos;
       int maxChildPos;
 
@@ -69,19 +69,18 @@ public class Heapsort
 
   private void minHeapify( int[] a )
   {
-
-    for( int i=1; i<a.length; i++ ) {
+    for( int i = 1; i < a.length; i++ ) {
       //add a[i] as leaf
-      int addValPos =  //val to add is next non-heap element
+      int addValPos = i - 1; //val to add is next non-heap element
 
       //now must percolate up
-      while(  ) { //potentially swap until reach root
+      while( a[addValPos] > 0 ) { //potentially swap until reach root
 
         //pinpoint parent
-        int parentPos =
+        int parentPos = (addValPos-1) / 2;
 
-        if (  ) {
-          swap(  );
+        if ( a[addValPos] > a[parentPos] ) {
+          swap(addValPos, parentPos, a);
           addValPos = parentPos;
         }
         else
@@ -94,18 +93,18 @@ public class Heapsort
 
   private void maxHeapify( int[] a )
   {
-    for( int i=1; i<a.length; i++ ) {
+    for( int i = 1; i < a.length; i++ ) {
       //add a[i] as leaf
-      int addValPos =  //val to add is next non-heap element
+      int addValPos = i - 1; //val to add is next non-heap element
 
       //now must percolate up
-      while(  ) { //potentially swap until reach root
+      while( a[addValPos] > 0 ) { //potentially swap until reach root
 
         //pinpoint parent
-        int parentPos =
+        int parentPos = (addValPos-1) / 2;
 
-        if (  ) {
-          swap(  );
+        if ( a[addValPos] < a[parentPos] ) {
+          swap(addValPos, parentPos, a);
           addValPos = parentPos;
         }
         else
@@ -133,8 +132,8 @@ public class Heapsort
     else if ( lc > last )
       retVal = rc;
     else {
-      int lcc = a.get(lc);
-      int rcc = a.get(rc);
+      int lcc = a[lc];
+      int rcc = a[rc];
       if (lcc < rcc) {
         return lc;
       }
@@ -165,8 +164,8 @@ public class Heapsort
     else if ( lc > last )
       retVal = rc;
     else {
-      int lcc = a.get(lc);
-      int rcc = a.get(rc);
+      int lcc = a[lc];
+      int rcc = a[rc];
       if (lcc > rcc) {
         return lc;
       }

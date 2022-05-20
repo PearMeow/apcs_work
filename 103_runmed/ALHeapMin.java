@@ -56,7 +56,6 @@ public class ALHeapMin
 
   public int size() { return _heap.size(); }
 
-
   /**
    * Integer peekMin()
    * Returns min value in heap

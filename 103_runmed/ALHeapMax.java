@@ -56,8 +56,8 @@ public class ALHeapMax
 
   public int size() { return _heap.size(); }
 
-  public Integer get(int pos) { return _heap.get(pos); }
 
+  
   /**
    * Integer peekMin()
    * Returns min value in heap

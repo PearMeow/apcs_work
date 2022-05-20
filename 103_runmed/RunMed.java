@@ -17,7 +17,6 @@ If the sum of the sizes of the two heaps are even, then return the sum of the gr
 and the least value in bigVals divided by two. Otherwise return the least value in bigVals. 
 
 */
-import java.util.ArrayList;
 public class RunMed {
 
     ALHeapMax lilVals;
